@@ -56,7 +56,8 @@ function enqueue_assets() {
  */
 function render_company_report_page() {
 
-	$status = sanitize_title( $_GET['status'] );
+	$status       = sanitize_title( $_GET['status'] );
+	$pledge_limit = 500;
 
 	if ( ! in_array( $status, array( 'draft', '5ftf-deactivated', 'publish' ) ) ) {
 		$status = 'all';
@@ -65,13 +66,13 @@ function render_company_report_page() {
 	$pledges = get_posts( array(
 		'post_type' => '5ftf_pledge',
 		'post_status' => $status,
-		'posts_per_page' => 250, // set to 250 to avoid unexpected memory overuse.
+		'posts_per_page' => $pledge_limit, // set to avoid unexpected memory overuse.
 		'orderby' => 'post_title',
 		'order' => 'ASC',
 	) );
 
 	// Add visible warning on page if we hit the upper limit of the query.
-	if ( 250 == count( $pledges ) ) {
+	if ( count( $pledges ) === $pledge_limit ) {
 		echo '<p>WARNING: pledge limit reached, check the code query.</p>';
 	}
 	?>
