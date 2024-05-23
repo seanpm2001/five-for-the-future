@@ -28,13 +28,14 @@ function load() {
 	require_once get_includes_path() . 'authentication.php';
 	require_once get_includes_path() . 'contributor.php';
 	require_once get_includes_path() . 'email.php';
-	require_once get_includes_path() . 'pledge.php';
-	require_once get_includes_path() . 'pledge-meta.php';
-	require_once get_includes_path() . 'pledge-form.php';
-	require_once get_includes_path() . 'xprofile.php';
 	require_once get_includes_path() . 'endpoints.php';
 	require_once get_includes_path() . 'miscellaneous.php';
+	require_once get_includes_path() . 'pledge.php';
+	require_once get_includes_path() . 'pledge-form.php';
+	require_once get_includes_path() . 'pledge-meta.php';
+	require_once get_includes_path() . 'reports.php';
 	require_once get_includes_path() . 'stats.php';
+	require_once get_includes_path() . 'xprofile.php';
 
 	// The logger expects things like `$_POST` which aren't set during unit tests.
 	if ( ! $running_unit_tests ) {

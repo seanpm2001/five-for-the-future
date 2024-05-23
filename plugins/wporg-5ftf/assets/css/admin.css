@@ -75,3 +75,17 @@
 .contributor-list .button-link-delete .dashicons {
 	margin-top: -2px;
 }
+
+table#wporg-5ftf-company-report, #wporg-5ftf-company-report th, #wporg-5ftf-company-report td {
+	border: 1px solid #000;
+	border-collapse: collapse;
+	padding: 5px;
+}
+
+
+
+#wporg-5ftf-company-report td.center {
+	text-align: center;
+}
+
+
