@@ -137,12 +137,12 @@ function render_company_report_page() {
 		echo ' <td>' . esc_html( $usernames ) . '</td>';
 		echo ' <td>' . esc_html( $teams ) . '</td>';
 		echo ' <td>' . esc_html( $company_url ) . '</td>';
-		echo ' <td>' . esc_html( $pledge_url ) . '</td>';
+		echo ' <td>' . esc_html( $pledge->guid ) . '</td>';
 		echo ' <td>' . esc_html( $email ). '</td>';
 		echo ' <td>' . esc_html( $date_created ) . '</td>';
 		echo ' <td>' . esc_html( $date_modified ) . '</td>';
 		echo '</tr>';
-		$export_data[] = array( $pledge->post_title, $pledge->post_status, $hours, $contributors, $usernames, $teams, $company_url, $pledge_url, $email, $date_created, $date_modified );
+		$export_data[] = array( $pledge->post_title, $pledge->post_status, $hours, $contributors, $usernames, $teams, $company_url, $pledge->guid, $email, $date_created, $date_modified );
 	}
 	echo '</table>';
 	echo '<p>Total contributors: ' . esc_html( $all_contributors ) . '</p>';
