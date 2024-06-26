@@ -298,7 +298,7 @@ function get_badge_classes( $team ) {
 			break;
 
 		case 'sustainability team':
-			$classes = array( 'badge-meta', 'dashicons-admin-site-alt3' );
+			$classes = array( 'badge-sustainability-team', 'dashicons-admin-site-alt3' );
 			break;
 
 		case 'test team':
