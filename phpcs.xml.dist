@@ -92,6 +92,10 @@
 
 		<!-- print_r() is perfectly accepted in some circumstances, like WP_CLI commands. -->
 		<exclude name="WordPress.PHP.DevelopmentFunctions.error_log_print_r" />
+
+		<!-- Exclude short array syntax as it is consistently already in the codebase :) -->
+		<exclude name="Generic.Arrays.DisallowShortArraySyntax"/>
+		<exclude name="Universal.Arrays.DisallowShortArraySyntax"/>
 	</rule>
 
 	<!-- Ignore the CPT template filename, since it is based on the CPT name, and can't change. -->
