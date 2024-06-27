@@ -31,7 +31,6 @@ module.exports = function( grunt ) {
 					require( 'autoprefixer' )( {
 						cascade: false
 					} ),
-					require( 'pixrem' ),
 					require('cssnano')( {
 						mergeRules: false
 					} )
@@ -44,7 +43,7 @@ module.exports = function( grunt ) {
 
 		sass: {
 			options: {
-				implementation: require( 'node-sass' ),
+				implementation: require( 'sass' ),
 				sourceMap: true,
 				// Don't add source map URL in built version.
 				omitSourceMapUrl: 'build' === process.argv[2],
@@ -78,7 +77,7 @@ module.exports = function( grunt ) {
 	}
 
 	grunt.loadNpmTasks( 'grunt-sass' );
-	grunt.loadNpmTasks( 'grunt-postcss' );
+	grunt.loadNpmTasks( '@lodder/grunt-postcss' );
 	grunt.loadNpmTasks( 'grunt-sass-globbing' );
 	grunt.loadNpmTasks( 'grunt-contrib-watch' );
 
