@@ -166,11 +166,16 @@ function add_pledge_contributors( $pledge_id, $contributors ) {
 	$results = array();
 
 	foreach ( $contributors as $wporg_username ) {
+		$wporg_user = get_user_by( 'slug', $wporg_username );
+
 		$args = array(
 			'post_type'   => CPT_ID,
 			'post_title'  => sanitize_user( $wporg_username ),
 			'post_parent' => $pledge_id,
 			'post_status' => 'pending',
+			'meta_input'  => array(
+				'wporg_user_id' => $wporg_user->ID,
+			),
 		);
 
 		$result = wp_insert_post( $args, true );
