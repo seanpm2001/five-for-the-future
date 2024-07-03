@@ -70,6 +70,26 @@ function get_all_xprofile_contributor_hours_teams(): array {
 }
 
 /**
+ *
+ * Reconfigures xprofile data to be in indexed array.
+ *
+ * @return array
+ */
+function get_all_xprofile_contributors_indexed(): array {
+	$all_data = get_all_xprofile_contributor_hours_teams();
+
+	$newdata = array();
+	foreach ( $all_data as $contributor ) {
+		$newdata[ $contributor->user_id ] = [
+			'hours_per_week' => $contributor->hours_per_week,
+			'team_names' => $contributor->team_names,
+		];
+	}
+
+	return $newdata;
+}
+
+/**
  * Pull relevant data from profiles.wordpress.org.
  *
  * Note that this does not unserialize anything, it just pulls the raw values from the database table. If you
