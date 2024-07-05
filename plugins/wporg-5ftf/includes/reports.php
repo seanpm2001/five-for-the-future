@@ -55,7 +55,7 @@ function enqueue_assets() {
 
 	if ( is_admin() ) {
 		$current_page = get_current_screen();
-		if ( '5ftf_pledge_page_5ftf_company_report' == $current_page->id ) {
+		if ( ( '5ftf_pledge_page_5ftf_company_report' == $current_page->id ) || ( '5ftf_pledge_page_5ftf_contributor_report' == $current_page->id ) ) {
 			wp_enqueue_style( '5ftf-admin' );
 		}
 	}
@@ -226,6 +226,8 @@ function render_contributor_report_page() {
 		];
 		$xprofile_teams       = $xprofile['team_names'] ?? [];
 		$user                 = get_user_by( 'ID', $user_id );
+		$user_display_name    = $user->display_name ?? '';
+		$user_email           = $user->user_email ?? '';
 		$last_login           = get_user_meta( $user_id, 'last_logged_in', true );
 		$teams                = str_replace( ' Team', '', implode( ',', $xprofile_teams ) );
 		echo '<tr>';
@@ -234,12 +236,12 @@ function render_contributor_report_page() {
 		echo '<td>' . esc_html( $pledge_company_title ) . '</td>';
 		echo '<td>' . esc_html( $xprofile['hours_per_week'] ) . '</td>';
 		echo '<td>' . esc_html( $teams ) . '</td>';
-		echo '<td>' . esc_html( $user->display_name ) . '</td>';
-		echo '<td>' . esc_html( $user->user_email ) . '</td>';
+		echo '<td>' . esc_html( $user_display_name ) . '</td>';
+		echo '<td>' . esc_html( $user_email ) . '</td>';
 		echo '<td>' . esc_html( $last_login ) . '</td>';
 		echo '<td>' . esc_html( $c->post_status ) . '</td>';
 		echo '</tr>';
-		$export_data[] = array( $user_id, $c->post_title, $pledge_company_title, $xprofile['hours_per_week'], $teams, $user->display_name, $user->user_email, $last_login, $c->post_status );
+		$export_data[] = array( $user_id, $c->post_title, $pledge_company_title, $xprofile['hours_per_week'], $teams, $user_display_name, $user_email, $last_login, $c->post_status );
 	}
 	echo '</table>';
 
