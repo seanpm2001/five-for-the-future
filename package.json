@@ -1,0 +1,25 @@
+{
+	"name": "wporg-5ftf",
+	"version": "1.0.0",
+	"description": "The codebase and development environment for Five for the Future.",
+	"author": "WordPress.org",
+	"license": "GPL-2.0-or-later",
+	"private": true,
+	"devDependencies": {
+		"@wordpress/env": "10.6.0",
+		"@wordpress/scripts": "28.6.0"
+	},
+	"scripts": {
+		"setup:tools": "npm install && composer install && TEXTDOMAIN=wporg-5ftf composer exec update-configs",
+		"setup:wp": "wp-env run cli bash env/setup.sh",
+		"build:theme": "npm run build --workspace=wporg-5ftf",
+		"start:theme": "npm run watch --workspace=wporg-5ftf",
+		"update:tools": "composer update && TEXTDOMAIN=wporg-5ftf composer exec update-configs",
+		"lint:php": "composer lint ./themes/wporg-5ftf ./plugins/wporg-5ftf",
+		"wp-env": "wp-env"
+	},
+	"workspaces": [
+		"themes/wporg-5ftf",
+		"themes/wporg-5ftf-2024"
+	]
+}

@@ -1,12 +1,31 @@
-*.css.map
-*.js.map
-
+/**/.DS_STORE
+/**/.idea
+/**/.svn
+/**/build
+/**/node_modules
+vendor
 coverage
+*.map
+wp-cli.yml
+
+/uploads
+/db.php
+
+
+# Allow local environment overrides.
+.wp-env.override.json
+.env/0-sandbox.php
+
+# Configs from wporg-repo-tools.
+.eslintrc.js
+.prettierrc.js
+.stylelintrc
+phpcs.xml.dist
 
 mu-plugins/vendor
+mu-plugins/pub
 mu-plugins/wporg-mu-plugins
 mu-plugins/0-sandbox.php
-node_modules
 
 plugins/*
 !plugins/wporg-5ftf
@@ -14,7 +33,5 @@ plugins/*
 themes/wporg-5ftf/css/style.css
 themes/wporg-5ftf/css/style-editor.css
 themes/pub
+themes/wporg-parent-2021
 themes/twenty*
-
-/uploads
-/db.php

@@ -23,23 +23,68 @@
 	},
 	"extra": {
 		"installer-paths": {
-			"mu-plugins/{$name}": [ "wporg/wporg-mu-plugins" ]
+			"mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+			"plugins/{$name}/": ["type:wordpress-plugin"],
+			"themes/{$name}/": ["type:wordpress-theme"]
 		}
 	},
 	"repositories": [
 		{
+			"type": "composer",
+			"url": "https://wpackagist.org/"
+		},
+		{
+			"type": "vcs",
+			"url": "git@github.com:WordPress/wporg-repo-tools.git"
+		},
+		{
 			"type": "vcs",
 			"url": "git@github.com:WordPress/wporg-mu-plugins.git"
+		},
+		{
+			"type": "vcs",
+			"url": "git@github.com:WordPress/wporg-parent-2021.git"
+		},
+		{
+			"type": "package",
+			"package": [
+				{
+					"name": "wordpress-meta/pub",
+					"type": "wordpress-muplugin",
+					"version": "1",
+					"source": {
+						"type": "svn",
+						"url": "https://meta.svn.wordpress.org/sites/",
+						"reference": "trunk/wordpress.org/public_html/wp-content/mu-plugins/pub/"
+					}
+				},
+				{
+					"name": "wordpress-meta/handbook",
+					"type": "wordpress-plugin",
+					"version": "2",
+					"source": {
+						"type": "svn",
+						"url": "https://meta.svn.wordpress.org/sites/",
+						"reference": "trunk/wordpress.org/public_html/wp-content/plugins/handbook/"
+					}
+				}
+			]
 		}
 	],
-	"require": {},
 	"require-dev" : {
 		"composer/installers": "~1.0",
-		"wporg/wporg-mu-plugins": "dev-build",
 		"dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
-		"wp-coding-standards/wpcs": "3.0.*",
+		"phpcompatibility/phpcompatibility-wp": "*",
 		"phpunit/phpunit": "^9",
 		"spatie/phpunit-watcher": "^1.23",
+		"wp-coding-standards/wpcs": "3.0.*",
+		"wordpress-meta/pub": "1",
+		"wordpress-meta/handbook": "2",
+		"wpackagist-plugin/gutenberg": "*",
+		"wpackagist-plugin/wordpress-importer": "*",
+		"wporg/wporg-mu-plugins": "dev-build",
+		"wporg/wporg-parent-2021": "dev-build",
+		"wporg/wporg-repo-tools": "dev-trunk",
 		"yoast/phpunit-polyfills": "^1.1"
 	},
 	"scripts": {
