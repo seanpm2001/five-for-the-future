@@ -35,7 +35,7 @@ jobs:
             - name: Ignore .gitignore
               run: |
                   git add themes/wporg-5ftf/* --force
-                  git add themes/wporg-5ftf/* --force
+                  git add themes/wporg-5ftf-2024/* --force
                   git add plugins/wporg-5ftf/* --force
 
             - name: Append build number to version
