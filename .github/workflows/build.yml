@@ -3,7 +3,7 @@ name: Build files and push to `build` branch.
 on:
     push:
         branches:
-            - trunk
+            - production
         paths:
             - themes/**
             - plugins/**
