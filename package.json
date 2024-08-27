@@ -18,6 +18,7 @@
 		"wp-env": "wp-env",
 		"lint:php": "composer lint ./themes/wporg-5ftf ./plugins/wporg-5ftf",
 		"format:php": "composer format ./themes/wporg-5ftf ./plugins/wporg-5ftf",
+		"test:php": "wp-env run tests-cli ./wp-content/mu-plugins/vendor/bin/phpunit -c ./wp-content/phpunit.xml.dist"
 	},
 	"workspaces": [
 		"themes/wporg-5ftf",
