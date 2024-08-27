@@ -21,9 +21,11 @@ require_once $_tests_dir . '/includes/functions.php';
  * Manually load the plugin being tested.
  */
 function _manually_load_plugin() {
-	define( 'WPORG_SUPPORT_FORUMS_BLOGID', 1 );
+	if ( ! defined( 'WPORG_SUPPORT_FORUMS_BLOGID' ) ) {
+		define( 'WPORG_SUPPORT_FORUMS_BLOGID', 1 );
+	}
 
-	require dirname( __FILE__, 2 ) . '/index.php';
+	require dirname( __DIR__, 1 ) . '/index.php';
 	require __DIR__ . '/helpers.php';
 }
 tests_add_filter( 'muplugins_loaded', '_manually_load_plugin' );

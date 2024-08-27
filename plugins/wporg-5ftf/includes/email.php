@@ -127,9 +127,9 @@ function send_contributor_confirmation_emails( $pledge_id, $contributor_id = nul
  * @param WP_Post $contributor
  */
 function send_contributor_removed_email( $pledge_id, $contributor ) {
-	$pledge   = get_post( $pledge_id );
-	$subject  = "Removed from {$pledge->post_title} Five for the Future pledge";
-	$user     = get_user_by( 'login', $contributor->post_title );
+	$pledge  = get_post( $pledge_id );
+	$subject = "Removed from {$pledge->post_title} Five for the Future pledge";
+	$user    = get_user_by( 'login', $contributor->post_title );
 
 	$message = sprintf( '
 		Howdy %1$s,
@@ -210,7 +210,7 @@ function send_pledge_deactivation_email( $pledge ) {
 /**
  * Ask an inactive contributor to update their pledge for accuracy.
  */
-function send_contributor_inactive_email( array $contributor ) : bool {
+function send_contributor_inactive_email( array $contributor ): bool {
 	/*
 	 * Their first name is ideal, but their username is the best fallback because `nickname`, `display_name`,
 	 * etc are too formal.
@@ -218,7 +218,7 @@ function send_contributor_inactive_email( array $contributor ) : bool {
 	$name    = empty( $contributor['first_name'] ) ? '@' . $contributor['user_nicename'] : $contributor['first_name'];
 	$subject = 'Please update your Five for the Future pledge';
 
-	$short_team_names = array_map( function( $team ) {
+	$short_team_names = array_map( function ( $team ) {
 		$team = str_replace( 'Team', '', $team );
 
 		return trim( $team );
@@ -261,7 +261,7 @@ function send_contributor_inactive_email( array $contributor ) : bool {
 /**
  * Ask a company to update their pledge for accuracy.
  */
-function send_pledge_update_email( WP_Post $pledge ) : bool {
+function send_pledge_update_email( WP_Post $pledge ): bool {
 	$to      = $pledge->{'5ftf_org-pledge-email'};
 	$subject = 'Please review your Five for the Future pledge';
 	$url     = get_permalink( $pledge );
@@ -281,7 +281,7 @@ function send_pledge_update_email( WP_Post $pledge ) : bool {
 /**
  * Ask a company to update their pledge for accuracy.
  */
-function send_pledge_inactive_email( WP_Post $pledge ) : bool {
+function send_pledge_inactive_email( WP_Post $pledge ): bool {
 	$to      = $pledge->{'5ftf_org-pledge-email'};
 	$subject = 'Please review your Five for the Future pledge';
 	$url     = get_permalink( $pledge );

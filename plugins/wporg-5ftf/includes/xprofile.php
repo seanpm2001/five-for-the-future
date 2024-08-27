@@ -82,7 +82,7 @@ function get_all_xprofile_contributors_indexed(): array {
 	foreach ( $all_data as $contributor ) {
 		$newdata[ $contributor->user_id ] = [
 			'hours_per_week' => $contributor->hours_per_week,
-			'team_names' => $contributor->team_names,
+			'team_names'     => $contributor->team_names,
 		];
 	}
 

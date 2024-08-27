@@ -15,8 +15,9 @@
 		"build:theme": "npm run build --workspace=wporg-5ftf",
 		"start:theme": "npm run watch --workspace=wporg-5ftf",
 		"update:tools": "composer update && TEXTDOMAIN=wporg-5ftf composer exec update-configs",
+		"wp-env": "wp-env",
 		"lint:php": "composer lint ./themes/wporg-5ftf ./plugins/wporg-5ftf",
-		"wp-env": "wp-env"
+		"format:php": "composer format ./themes/wporg-5ftf ./plugins/wporg-5ftf",
 	},
 	"workspaces": [
 		"themes/wporg-5ftf",

@@ -171,9 +171,9 @@ function get_snapshot_data() {
 
 		if ( Contributor\is_active( $user['last_logged_in'] ) ) {
 			if ( $is_company_sponsored ) {
-				$active_company_sponsored_contributors++;
+				++$active_company_sponsored_contributors;
 			} else {
-				$active_self_sponsored_contributors++;
+				++$active_self_sponsored_contributors;
 			}
 		} else {
 			$snapshot_data['inactive_contributor_ids'][] = $user['user_id'];
@@ -185,7 +185,7 @@ function get_snapshot_data() {
 
 		foreach ( $user['team_names'] as $team ) {
 			if ( isset( $snapshot_data[ $team_contributor_key ][ $team ] ) ) {
-				$snapshot_data[ $team_contributor_key ][ $team ] ++;
+				++$snapshot_data[ $team_contributor_key ][ $team ];
 			} else {
 				$snapshot_data[ $team_contributor_key ][ $team ] = 1;
 			}

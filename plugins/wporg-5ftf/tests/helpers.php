@@ -9,7 +9,7 @@ use WP_UnitTest_Factory;
  *
  * Call in `set_up_before_class()`.
  */
-function database_setup_before_class( WP_UnitTest_Factory $factory ) : array {
+function database_setup_before_class( WP_UnitTest_Factory $factory ): array {
 	global $wpdb;
 
 	$fixtures = array();
@@ -70,7 +70,7 @@ function database_setup_before_class( WP_UnitTest_Factory $factory ) : array {
 	) );
 
 	// Pages.
-	$for_organizations = $factory->post->create_and_get( array(
+	$for_organizations                      = $factory->post->create_and_get( array(
 		'post_type'   => 'page',
 		'post_title'  => 'For Organizations',
 		'post_status' => 'publish',
@@ -103,7 +103,7 @@ function database_setup_before_class( WP_UnitTest_Factory $factory ) : array {
  *
  * Call in `set_up()`.
  */
-function database_set_up( array $user_ids ) : void {
+function database_set_up( array $user_ids ): void {
 	global $wpdb;
 
 	$wpdb->query( 'TRUNCATE TABLE `bpmain_bp_xprofile_data` ' );
@@ -140,7 +140,7 @@ function database_set_up( array $user_ids ) : void {
  *
  * Call in `tear_down_after_class()`.
  */
-function database_tear_down_after_class() : void {
+function database_tear_down_after_class(): void {
 	global $wpdb;
 
 	$wpdb->query( 'DROP TABLE `bpmain_bp_xprofile_data` ' );

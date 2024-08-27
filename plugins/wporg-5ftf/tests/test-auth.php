@@ -52,7 +52,7 @@ class Test_Auth extends WP_UnitTestCase {
 	/**
 	 * Setup fixtures that are unique for each test.
 	 */
-	public function set_up() : void {
+	public function set_up(): void {
 		parent::set_up();
 
 		/*
@@ -115,7 +115,7 @@ class Test_Auth extends WP_UnitTestCase {
 			'wrong-data-type'    => array( 'this string is not an array' ),
 			'wrong-array-items'  => array( 'this' => "doesn't have `value` and `expiration` items" ),
 
-			'invalid-value' => array(
+			'invalid-value'      => array(
 				// Must have TOKEN_LENGTH characters, otherwise could be rejected for the wrong reason.
 				'value'      => 'Has special characters !@#$%^&*)',
 				'expiration' => time() + MINUTE_IN_SECONDS,

@@ -55,7 +55,7 @@ class Test_Contributor extends WP_UnitTestCase {
 	 * @covers WordPressDotOrg\FiveForTheFuture\XProfile\get_contributor_user_data
 	 * @covers WordPressDotOrg\FiveForTheFuture\Pledge\deactivate
 	 */
-	public function test_data_reset_once_no_active_sponsors() : void {
+	public function test_data_reset_once_no_active_sponsors(): void {
 		// Setup scenario where Jane is sponsored by two companies.
 		$mailer                = tests_retrieve_phpmailer_instance();
 		$jane                  = self::$users['jane'];
@@ -122,7 +122,7 @@ class Test_Contributor extends WP_UnitTestCase {
 	 * @covers WordPressDotOrg\FiveForTheFuture\XProfile\get_contributor_user_data
 	 * @covers WordPressDotOrg\FiveForTheFuture\Pledge\deactivate
 	 */
-	public function test_data_not_reset_when_unconfirmed_sponsor() : void {
+	public function test_data_not_reset_when_unconfirmed_sponsor(): void {
 		// Setup scenario where Jane was invited to join a company but didn't respond.
 		$mailer             = tests_retrieve_phpmailer_instance();
 		$jane               = self::$users['jane'];
@@ -163,7 +163,7 @@ class Test_Contributor extends WP_UnitTestCase {
 	 * @covers WordPressDotOrg\FiveForTheFuture\Contributor\add_pledge_contributors
 	 * @covers WordPressDotOrg\FiveForTheFuture\XProfile\get_contributor_user_data
 	 */
-	public function test_data_reset_when_single_contributor_removed_from_pledge() : void {
+	public function test_data_reset_when_single_contributor_removed_from_pledge(): void {
 		// Setup scenario where Jane and Ashish are sponsored by a company.
 		$mailer              = tests_retrieve_phpmailer_instance();
 		$jane                = self::$users['jane'];
@@ -226,21 +226,21 @@ class Test_Contributor extends WP_UnitTestCase {
 		);
 
 		$contributors = array(
-			'active + due for email' => array(
+			'active + due for email'       => array(
 				'user_id'                    => self::$users['jane']->ID,
 				'last_logged_in'             => strtotime( '1 week ago' ),
 				'user_registered'            => strtotime( '1 year ago' ),
 				'5ftf_last_inactivity_email' => 0,
 			),
 
-			'active + not due for email' => array(
+			'active + not due for email'   => array(
 				'user_id'                    => self::$users['ashish']->ID,
 				'last_logged_in'             => strtotime( '1 week ago' ),
 				'user_registered'            => strtotime( '1 year ago' ),
 				'5ftf_last_inactivity_email' => strtotime( '1 month ago' ),
 			),
 
-			'inactive + due for email' => array(
+			'inactive + due for email'     => array(
 				'user_id'                    => self::$users['andrea']->ID,
 				'last_logged_in'             => strtotime( '4 months ago' ),
 				'user_registered'            => strtotime( '1 year ago' ),
@@ -254,14 +254,14 @@ class Test_Contributor extends WP_UnitTestCase {
 				'5ftf_last_inactivity_email' => strtotime( '2 months ago' ),
 			),
 
-			'new user' => array(
+			'new user'                     => array(
 				'user_id'                    => self::$users['jane']->ID,
 				'last_logged_in'             => 0,
 				'user_registered'            => strtotime( '1 week ago' ),
 				'5ftf_last_inactivity_email' => 0,
 			),
 
-			'inactive + blocked' => array(
+			'inactive + blocked'           => array(
 				'user_id'                    => self::$users['kimi']->ID,
 				'last_logged_in'             => strtotime( '4 months ago' ),
 				'user_registered'            => strtotime( '1 year ago' ),

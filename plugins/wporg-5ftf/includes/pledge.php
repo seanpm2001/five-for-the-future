@@ -352,7 +352,7 @@ function is_active_pledge( $post_id ) {
 function create_new_pledge( $name ) {
 	// Grab the ID of the post we are on before inserting a pledge.
 	$pledge_form_post_id = get_post()->ID;
-	$args = array(
+	$args                = array(
 		'post_type'   => CPT_ID,
 		'post_title'  => $name,
 		'post_status' => 'draft',
@@ -585,12 +585,12 @@ function send_update_reminders(): void {
 		'posts_per_page' => 15, // Limit # of emails to maintain IP reputation.
 
 		// New pledges haven't had time to become inaccurate yet.
-		'date_query' => array(
+		'date_query'     => array(
 			'column' => 'post_date',
 			'before' => "$resend_interval seconds ago",
 		),
 
-		'meta_query' => array(
+		'meta_query'     => array(
 			'relation' => 'AND',
 
 			array(

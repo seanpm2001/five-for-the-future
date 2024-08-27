@@ -74,11 +74,11 @@ function render_company_report_page() {
 	}
 
 	$pledges = get_posts( array(
-		'post_type' => '5ftf_pledge',
-		'post_status' => $status,
+		'post_type'      => '5ftf_pledge',
+		'post_status'    => $status,
 		'posts_per_page' => $pledge_limit, // set to avoid unexpected memory overuse.
-		'orderby' => 'post_title',
-		'order' => 'ASC',
+		'orderby'        => 'post_title',
+		'order'          => 'ASC',
 	) );
 
 	// Add visible warning on page if we hit the upper limit of the query.
@@ -122,18 +122,18 @@ function render_company_report_page() {
 
 	$export_data = array();
 	foreach ( $pledges as $pledge ) {
-		$company_url    = get_post_meta( $pledge->ID, '5ftf_org-domain', true );
-		$email          = get_post_meta( $pledge->ID, '5ftf_org-pledge-email', true );
-		$date_created   = substr( $pledge->post_date, 0, 10 );
-		$date_modified  = substr( $pledge->post_modified, 0, 10 );
+		$company_url   = get_post_meta( $pledge->ID, '5ftf_org-domain', true );
+		$email         = get_post_meta( $pledge->ID, '5ftf_org-pledge-email', true );
+		$date_created  = substr( $pledge->post_date, 0, 10 );
+		$date_modified = substr( $pledge->post_modified, 0, 10 );
 
-		$team           = XProfile\get_aggregate_contributor_data_for_pledge( $pledge->ID );
-		$hours          = $team['hours'];
-		$contributors   = $team['contributors'];
+		$team         = XProfile\get_aggregate_contributor_data_for_pledge( $pledge->ID );
+		$hours        = $team['hours'];
+		$contributors = $team['contributors'];
 
 		$all_contributors += $contributors;
-		$users          = Contributor\get_pledge_contributors( $pledge->ID, 'publish' );
-		$wporg_profiles = wp_list_pluck( $users, 'post_title' );
+		$users             = Contributor\get_pledge_contributors( $pledge->ID, 'publish' );
+		$wporg_profiles    = wp_list_pluck( $users, 'post_title' );
 
 		$usernames = implode( ', ', $wporg_profiles );
 		$teams     = implode( ', ', str_replace( ' Team', '', $team['teams'] ) );
@@ -173,11 +173,11 @@ function render_contributor_report_page() {
 	}
 
 	$contributors = get_posts( array(
-		'post_type' => '5ftf_contributor',
-		'post_status' => $status,
+		'post_type'      => '5ftf_contributor',
+		'post_status'    => $status,
 		'posts_per_page' => $contributor_limit, // set to avoid unexpected memory overuse.
-		'orderby' => 'post_title',
-		'order' => 'ASC',
+		'orderby'        => 'post_title',
+		'order'          => 'ASC',
 	) );
 
 	// Add visible warning on page if we hit the upper limit of the query.
@@ -221,7 +221,7 @@ function render_contributor_report_page() {
 		$pledge_company_title = get_the_title( $pledge_company ) ?? 'unattached';
 		$user_id              = get_post_meta( $c->ID, 'wporg_user_id', true );
 		$xprofile             = $all_contributor_data[ $user_id ] ?? [
-			'team_names' => [],
+			'team_names'     => [],
 			'hours_per_week' => 0,
 		];
 		$xprofile_teams       = $xprofile['team_names'] ?? [];

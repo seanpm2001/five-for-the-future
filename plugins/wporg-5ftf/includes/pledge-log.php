@@ -88,7 +88,7 @@ function get_pledge_log( $pledge_id ) {
 		return array();
 	}
 
-	usort( $log, function( $a, $b ) {
+	usort( $log, function ( $a, $b ) {
 		if ( $a['timestamp'] === $b['timestamp'] ) {
 			return 0;
 		}
@@ -391,7 +391,7 @@ function capture_email_result( $to, $subject, $message, $headers, $result, $pled
 /**
  * Capture the results of an attempt to send an email.
  */
-function capture_pledge_deactivation( int $pledge_id, bool $notify, string $reason, /* mixed */ $result ) : void {
+function capture_pledge_deactivation( int $pledge_id, bool $notify, string $reason, /* mixed */ $result ): void {
 	add_log_entry(
 		$pledge_id,
 		'deactivated_pledge',

@@ -181,4 +181,3 @@ function can_manage_pledge( $requested_pledge_id, $auth_token = '' ) {
 		__( 'Your link has expired.', 'wporg-5ftf' )
 	);
 }
-
