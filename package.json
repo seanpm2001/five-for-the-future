@@ -12,12 +12,14 @@
 	"scripts": {
 		"setup:tools": "npm install && composer install && TEXTDOMAIN=wporg-5ftf composer exec update-configs",
 		"setup:wp": "wp-env run cli bash env/setup.sh",
-		"build:theme": "npm run build --workspace=wporg-5ftf",
-		"start:theme": "npm run watch --workspace=wporg-5ftf",
+		"build:old-theme": "npm run build --workspace=wporg-5ftf",
+		"start:old-theme": "npm run watch --workspace=wporg-5ftf",
+		"build:theme": "npm run build --workspace=wporg-5ftf-2024",
+		"start:theme": "npm run watch --workspace=wporg-5ftf-2024",
 		"update:tools": "composer update && TEXTDOMAIN=wporg-5ftf composer exec update-configs",
 		"wp-env": "wp-env",
-		"lint:php": "composer lint ./themes/wporg-5ftf ./plugins/wporg-5ftf",
-		"format:php": "composer format ./themes/wporg-5ftf ./plugins/wporg-5ftf",
+		"lint:php": "composer lint ./themes/wporg-5ftf ./themes/wporg-5ftf-2024 ./plugins/wporg-5ftf",
+		"format:php": "composer format ./themes/wporg-5ftf ./themes/wporg-5ftf-2024 ./plugins/wporg-5ftf",
 		"test:php": "wp-env run tests-cli ./wp-content/mu-plugins/vendor/bin/phpunit -c ./wp-content/phpunit.xml.dist"
 	},
 	"workspaces": [
