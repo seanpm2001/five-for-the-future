@@ -81,6 +81,7 @@
 		"wordpress-meta/pub": "1",
 		"wordpress-meta/handbook": "2",
 		"wpackagist-plugin/gutenberg": "*",
+		"wpackagist-plugin/jetpack": "*",
 		"wpackagist-plugin/wordpress-importer": "*",
 		"wporg/wporg-mu-plugins": "dev-build",
 		"wporg/wporg-parent-2021": "dev-build",

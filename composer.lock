@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "10be1d2c6b997b87d2560e2ed51fff29",
+    "content-hash": "5ce4530a0f3980d4247215c248c5be21",
     "packages": [],
     "packages-dev": [
         {
@@ -4238,6 +4238,24 @@
             "homepage": "https://wordpress.org/plugins/gutenberg/"
         },
         {
+            "name": "wpackagist-plugin/jetpack",
+            "version": "13.7",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/jetpack/",
+                "reference": "tags/13.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/jetpack.13.7.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/jetpack/"
+        },
+        {
             "name": "wpackagist-plugin/wordpress-importer",
             "version": "0.8.2",
             "source": {
@@ -4336,12 +4354,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/wporg-repo-tools.git",
-                "reference": "b5c37010a9748bb1de9636842b5619094d2b9ed8"
+                "reference": "d1f034d1ca40b1509c75a43aeeb437d5aaa95a97"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress/wporg-repo-tools/zipball/b5c37010a9748bb1de9636842b5619094d2b9ed8",
-                "reference": "b5c37010a9748bb1de9636842b5619094d2b9ed8",
+                "url": "https://api.github.com/repos/WordPress/wporg-repo-tools/zipball/d1f034d1ca40b1509c75a43aeeb437d5aaa95a97",
+                "reference": "d1f034d1ca40b1509c75a43aeeb437d5aaa95a97",
                 "shasum": ""
             },
             "require": {
@@ -4361,7 +4379,7 @@
                 "issues": "https://github.com/WordPress/wporg-repo-tools/issues",
                 "source": "https://github.com/WordPress/wporg-repo-tools/tree/trunk"
             },
-            "time": "2024-05-30T15:38:14+00:00"
+            "time": "2024-08-27T19:51:46+00:00"
         },
         {
             "name": "yoast/phpunit-polyfills",
