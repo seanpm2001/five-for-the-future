@@ -125,18 +125,4 @@
 	.pledge-contributors.pledge-status__draft .resend-confirm {
 		display: none;
 	}
-
-	.wp-block-button.is-destructive {
-		--wp--custom--button--outline--color--text: #d63638;
-
-		--wp--custom--button--outline--hover--color--text: var(--wp--preset--color--white);
-		--wp--custom--button--outline--hover--color--background: var(--wp--custom--button--outline--color--text);
-		--wp--custom--button--outline--hover--border--color: var(--wp--custom--button--outline--color--text);
-
-		.wp-block-button__link:focus {
-			background-color: var(--wp--custom--button--outline--color--text);
-			color: var(--wp--preset--color--white);
-			outline-color: var(--wp--custom--button--outline--hover--border--color);
-		}
-	}
 }
