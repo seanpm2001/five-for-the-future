@@ -1,0 +1,54 @@
+/* Notice styles to handle existing `.notice` markup. This mirrors the global "Notice" block styles. */
+.notice {
+	--wp--custom--wporg-notice--color--background: var(--wp--preset--color--acid-green-3, #e2ffed);
+	--wp--custom--wporg-notice--color--text: var(--wp--preset--color--charcoal-1, #1e1e1e);
+
+	padding: var(--wp--preset--spacing--10);
+	padding-left: calc(var(--wp--preset--spacing--10) * 2 + 24px);
+	color: var(--wp--custom--wporg-notice--color--text);
+	background-color: var(--wp--custom--wporg-notice--color--background);
+	border-radius: 2px;
+	font-size: var(--wp--preset--font-size--small);
+	line-height: var(--wp--custom--body--small--typography--line-height);
+
+	/* stylelint-disable-next-line */
+	background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M19.6 12a7.6 7.6 0 1 1-15.2 0 7.6 7.6 0 0 1 15.2 0zm1.4 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0zm-9.9 1.906v.086h1.297v-.086c.006-.347.045-.639.117-.875.073-.235.188-.44.345-.612a3.06 3.06 0 0 1 .626-.498c.272-.163.504-.35.698-.563.196-.211.347-.451.453-.72.106-.272.159-.578.159-.916 0-.493-.117-.923-.35-1.292a2.312 2.312 0 0 0-.97-.866c-.416-.209-.903-.313-1.46-.313-.507 0-.97.097-1.39.29a2.412 2.412 0 0 0-1.007.857c-.254.375-.392.834-.413 1.378h1.378c.021-.32.101-.581.24-.784.14-.206.315-.357.526-.453.212-.097.434-.145.667-.145.257 0 .49.054.698.163.212.106.38.257.508.453.127.197.19.43.19.698 0 .224-.042.428-.127.612-.084.185-.2.348-.344.49-.145.142-.309.27-.49.385-.281.17-.521.357-.72.563-.2.205-.354.474-.463.806-.106.333-.162.78-.168 1.342zm.045 2.58a.88.88 0 0 0 .64.263c.166 0 .317-.041.453-.123a.938.938 0 0 0 .326-.326.864.864 0 0 0 .127-.458.85.85 0 0 0-.272-.635.867.867 0 0 0-.634-.267.872.872 0 0 0-.64.267.858.858 0 0 0-.267.635c0 .251.09.466.267.644z' fill='%23008A20'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: var(--wp--preset--spacing--10) calc(var(--wp--preset--spacing--10) + 4px);
+	background-size: 24px 24px;
+	margin-top: 1px;
+
+	> * {
+		align-self: start;
+	}
+
+	p:first-child {
+		margin-block-start: 0;
+	}
+
+	p:last-child {
+		margin-block-end: 0;
+	}
+
+	br:first-child {
+		display: none;
+	}
+
+	&.notice-info {
+		--wp--custom--wporg-notice--color--background: var(--wp--preset--color--blueberry-4, #eff2ff);
+		/* stylelint-disable-next-line */
+		background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M19.6 12a7.6 7.6 0 1 1-15.2 0 7.6 7.6 0 0 1 15.2 0zm1.4 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0zm-9.713-2.226v7.259h1.412V9.774h-1.412zm.08-1.365a.898.898 0 0 0 .633.245.882.882 0 0 0 .629-.245.792.792 0 0 0 .264-.596.783.783 0 0 0-.264-.595.873.873 0 0 0-.629-.25.889.889 0 0 0-.633.25.79.79 0 0 0-.26.595c0 .23.087.429.26.596z' fill='%233858E9'/%3E%3C/svg%3E%0A");
+	}
+
+	&.notice-warning {
+		--wp--custom--wporg-notice--color--background: var(--wp--preset--color--lemon-3, #fffdd6);
+		/* stylelint-disable-next-line */
+		background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M19.6 12a7.6 7.6 0 1 1-15.2 0 7.6 7.6 0 0 1 15.2 0zm1.4 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0zm-8.321 2.093l.128-7.177h-1.619l.128 7.177h1.363zm-1.377 2.705a.96.96 0 0 0 .698.286.93.93 0 0 0 .487-.133 1.017 1.017 0 0 0 .497-.851.948.948 0 0 0-.295-.689.94.94 0 0 0-.689-.29.952.952 0 0 0-.698.29.914.914 0 0 0-.286.689.935.935 0 0 0 .286.698z' fill='%23B7B35B'/%3E%3C/svg%3E%0A");
+	}
+
+	&.notice-error {
+		--wp--custom--wporg-notice--color--background: var(--wp--preset--color--pomegrade-3, #ffe9de);
+		/* stylelint-disable-next-line */
+		background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='a' fill='%23fff'%3E%3Cpath d='M20.543 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z'/%3E%3C/mask%3E%3Cpath d='M19.142 12a7.6 7.6 0 0 1-7.6 7.6v2.8c5.744 0 10.4-4.656 10.4-10.4h-2.8zm-7.6 7.6a7.6 7.6 0 0 1-7.6-7.6h-2.8c0 5.744 4.657 10.4 10.4 10.4v-2.8zm-7.6-7.6a7.6 7.6 0 0 1 7.6-7.6V1.6C5.8 1.6 1.143 6.256 1.143 12h2.8zm7.6-7.6a7.6 7.6 0 0 1 7.6 7.6h2.8c0-5.744-4.656-10.4-10.4-10.4v2.8z' fill='%23E26F56' mask='url(%23a)'/%3E%3Cpath fill='%23E26F56' d='M15.573 15.04l-.99.99-7.071-7.07.99-.99z'/%3E%3Cpath fill='%23E26F56' d='M14.584 7.97l.99.99-7.07 7.07-.99-.99z'/%3E%3C/svg%3E%0A");
+	}
+}
