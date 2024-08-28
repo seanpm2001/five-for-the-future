@@ -25,10 +25,12 @@ $pledge_id = ( Pledge\CPT_ID === get_post_type() ) ? get_post()->ID : absint( $_
 
 	<div class="message"></div>
 
-	<input
-		type="submit"
-		class="button"
-		name="get_manage_pledge_link"
-		value="<?php esc_attr_e( 'Submit', 'wporg-5ftf' ); ?>"
-	/>
+	<div class="wp-block-button is-small">
+		<input
+			type="submit"
+			class="button wp-block-button__link"
+			name="get_manage_pledge_link"
+			value="<?php esc_attr_e( 'Submit', 'wporg-5ftf' ); ?>"
+		/>
+	</div>
 </form>

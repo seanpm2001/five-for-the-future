@@ -43,6 +43,8 @@ jQuery( document ).ready( function( $ ) {
 			}
 		}
 
+		button.setAttribute( 'aria-expanded', true );
+
 		modal.removeAttribute( 'hidden' );
 		modalBg.removeAttribute( 'hidden' );
 		modal.style.top = position.top + 'px';
@@ -65,6 +67,8 @@ jQuery( document ).ready( function( $ ) {
 
 		modal.hidden = true;
 		modalBg.hidden = true;
+
+		button.setAttribute( 'aria-expanded', false );
 
 		// Wait a tick before setting focus. See https://github.com/WICG/inert#performance-and-gotchas
 		setTimeout( function() {

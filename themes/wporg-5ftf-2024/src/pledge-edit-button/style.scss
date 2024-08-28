@@ -1,0 +1,59 @@
+.edit-pledge-wrapper .wp-block-button__link[aria-expanded="true"] {
+	background-color: var(--wp--preset--color--charcoal-1) !important;
+	color: var(--wp--preset--color--white) !important;
+}
+
+.pledge-dialog {
+	position: absolute;
+	z-index: 100;
+	width: 25rem;
+	margin-top: var(--wp--preset--spacing--10);
+	padding: var(--wp--preset--spacing--20);
+	background: #fff;
+	border: 1px solid var(--wp--preset--color--light-grey-1);
+
+	&[hidden] {
+		display: none;
+	}
+
+	.pledge-dialog__close {
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding: var(--wp--preset--spacing--10);
+		text-decoration: none;
+		background: none;
+		border: none;
+	}
+}
+
+.pledge-dialog__background {
+	position: fixed;
+	z-index: 99;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+
+	&[hidden] {
+		display: none;
+	}
+}
+
+.pledge-email-form {
+	label {
+		display: inline-block;
+		margin-bottom: 4px;
+	}
+
+	input[type="email"] {
+		display: block;
+		width: 100%;
+		margin: 0 0 var(--wp--preset--spacing--10) 0;
+		box-shadow: none;
+	}
+
+	.message {
+		margin: 0 0 var(--wp--preset--spacing--10) 0;
+	}
+}
