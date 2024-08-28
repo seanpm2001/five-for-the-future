@@ -1,0 +1,30 @@
+.wp-block-wporg-pledge-contributors ul {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--wp--preset--spacing--10);
+	list-style: none;
+	padding-left: 0;
+
+	li {
+		width: 70px;
+		height: 70px;
+	}
+
+	.pledge-contributor__avatar a {
+		display: inline-block;
+		background: var(--wp--preset--color--light-grey-2);
+		border-radius: 50%;
+
+		&:focus {
+			outline: 1.5px solid var(--wp--preset--color--white);
+			box-shadow: 0 0 0 3px var(--wp--preset--color--blueberry-1);
+		}
+
+		img {
+			vertical-align: middle;
+			border-radius: 50%;
+			max-width: 100%;
+			height: auto;
+		}
+	}
+}

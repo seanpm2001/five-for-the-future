@@ -9,7 +9,9 @@ require_once __DIR__ . '/inc/block-config.php';
 require_once __DIR__ . '/inc/block-bindings.php';
 
 // Block files.
+require_once __DIR__ . '/src/pledge-contributors/index.php';
 require_once __DIR__ . '/src/pledge-edit-button/index.php';
+require_once __DIR__ . '/src/pledge-teams/index.php';
 
 /**
  * Actions and filters.

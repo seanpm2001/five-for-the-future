@@ -279,3 +279,262 @@ function reset_contribution_data( $user_id ): void {
 		'bp_xprofile_data'
 	);
 }
+
+/**
+ * Determines the CSS classes for a given team badge.
+ *
+ * Based on the `wporg_profiles_get_association_classes` function in the profiles.wordpress.org theme.
+ *
+ * @param string $team
+ *
+ * @return array
+ */
+function get_association_classes( $team ) {
+	switch ( sanitize_title( $team ) ) {
+		case 'plugin-developer':
+			$classes = array( 'badge-plugins', 'dashicons-admin-plugins' );
+			break;
+
+		case 'theme-review-team':
+		case 'themes-team':
+			$classes = array( 'badge-themes-reviewer', 'dashicons-admin-appearance' );
+			break;
+
+		case 'theme-developer':
+			$classes = array( 'badge-themes', 'dashicons-admin-appearance' );
+			break;
+
+		case 'documentation-team':
+			$classes = array( 'badge-documentation', 'dashicons-admin-page' );
+			break;
+
+		case 'documentation-contributor':
+			$classes = array( 'badge-documentation-contributor', 'dashicons-admin-page' );
+			break;
+
+		case 'core-team':
+		case 'playground-team':
+			$classes = array( 'badge-code-committer', 'dashicons-editor-code' );
+			break;
+
+		case 'core-contributor':
+			$classes = array( 'badge-code', 'dashicons-editor-code' );
+			break;
+
+		case 'mobile-team':
+			$classes = array( 'badge-mobile', 'dashicons-smartphone' );
+			break;
+
+		case 'accessibility-team':
+			$classes = array( 'badge-accessibility', 'dashicons-universal-access' );
+			break;
+
+		case 'accessibility-contributor':
+			$classes = array( 'badge-accessibility-contributor', 'dashicons-universal-access' );
+			break;
+
+		case 'plugin-review-team':
+			$classes = array( 'badge-plugins-reviewer ', 'dashicons-admin-plugins' );
+			break;
+
+		case 'community-team':
+			$classes = array( 'badge-community', 'dashicons-groups' );
+			break;
+
+		case 'community-contributor':
+			$classes = array( 'badge-community-contributor', 'dashicons-groups' );
+			break;
+
+		case 'support-team':
+			$classes = array( 'badge-support', 'dashicons-format-chat' );
+			break;
+
+		case 'support-contributor':
+			$classes = array( 'badge-support-contributor', 'dashicons-format-chat' );
+			break;
+
+		case 'meta-team':
+			$classes = array( 'badge-meta', 'dashicons-networking' );
+			break;
+
+		case 'meta-contributor':
+			$classes = array( 'badge-meta-contributor', 'dashicons-networking' );
+			break;
+
+		case 'training-team':
+			$classes = array( 'badge-training', 'dashicons-welcome-learn-more' );
+			break;
+
+		case 'training-contributor':
+			$classes = array( 'badge-training-contributor', 'dashicons-welcome-learn-more' );
+			break;
+
+		case 'translation-contributor':
+			$classes = array( 'badge-translation-contributor', 'dashicons-translation' );
+			break;
+
+		case 'polyglots-team':
+		case 'translation-editor':
+			$classes = array( 'badge-translation-editor', 'dashicons-translation' );
+			break;
+
+		case 'wordcamp-speaker':
+			$classes = array( 'badge-speaker', 'dashicons-megaphone' );
+			break;
+
+		case 'wordcamp-organizer':
+			$classes = array( 'badge-organizer', 'dashicons-tickets' );
+			break;
+
+		case 'meetup-organizer':
+			$classes = array( 'badge-organizer', 'dashicons-nametag' );
+			break;
+
+		case 'tv-team':
+		case 'wordpress-tv-team':
+			$classes = array( 'badge-wordpress-tv', 'dashicons-video-alt2' );
+			break;
+
+		case 'wordpress-tv-contributor':
+			$classes = array( 'badge-wordpress-tv-contributor', 'dashicons-video-alt2' );
+			break;
+
+		case 'design':
+		case 'design-team':
+			$classes = array( 'badge-design', 'dashicons-art' );
+			break;
+
+		case 'design-contributor':
+			$classes = array( 'badge-design-contributor', 'dashicons-art' );
+			break;
+
+		case 'marketing-team':
+			$classes = array( 'badge-marketing', 'dashicons-format-status' );
+			break;
+
+		case 'marketing-contributor':
+			$classes = array( 'badge-marketing-contributor', 'dashicons-format-status' );
+			break;
+
+		case 'media-corps-team':
+			$classes = array( 'badge-media-corps-team', 'dashicons-format-status' );
+			break;
+
+		case 'media-corps-contributor':
+			$classes = array( 'badge-media-corps-contributor', 'dashicons-format-status' );
+			break;
+
+		case 'wp-cli-team':
+		case 'cli-team':
+			$classes = array( 'badge-wp-cli', 'dashicons-arrow-right-alt2' );
+			break;
+
+		case 'cli-contributor':
+			$classes = array( 'badge-wp-cli-contributor', 'dashicons-arrow-right-alt2' );
+			break;
+
+		case 'hosting-team':
+			$classes = array( 'badge-hosting', 'dashicons-cloud' );
+			break;
+
+		case 'hosting-contributor':
+			$classes = array( 'badge-hosting-contributor', 'dashicons-cloud' );
+			break;
+
+		case 'tide-team':
+			$classes = array( 'badge-tide', 'dashicons-tide' );
+			break;
+
+		case 'tide-contributor':
+			$classes = array( 'badge-tide-contributor', 'dashicons-tide' );
+			break;
+
+		case 'security-team':
+			$classes = array( 'badge-security-team', 'dashicons-lock' );
+			break;
+
+		case 'security-contributor':
+			$classes = array( 'badge-security-contributor', 'dashicons-lock' );
+			break;
+
+		case 'buddypress-team':
+			// Logo defined as SVG in CSS.
+			$classes = array( 'badge-buddypress' );
+			break;
+
+		case 'buddypress-contributor':
+			// Logo defined as SVG in CSS.
+			$classes = array( 'badge-buddypress-contributor' );
+			break;
+
+		case 'bbpress-team':
+			$classes = array( 'badge-bbpress', 'dashicons-buddicons-replies' );
+			break;
+
+		case 'bbpress-contributor':
+			$classes = array( 'badge-bbpress-contributor', 'dashicons-buddicons-replies' );
+			break;
+
+		case 'test-team':
+			$classes = array( 'badge-test', 'dashicons-welcome-view-site' );
+			break;
+
+		case 'test-contributor':
+			$classes = array( 'badge-test-contributor', 'dashicons-welcome-view-site' );
+			break;
+
+		case 'openverse-team':
+			// Logo defined as SVG in CSS.
+			$classes = array( 'badge-openverse' );
+			break;
+
+		case 'openverse-contributor':
+			// Logo defined as SVG in CSS.
+			$classes = array( 'badge-openverse-contributor' );
+			break;
+
+		case 'patterns-team':
+			$classes = array( 'badge-patterns-team', 'dashicons-layout' );
+			break;
+
+		case 'pattern-author':
+			$classes = array( 'badge-pattern-author', 'dashicons-layout' );
+			break;
+
+		case 'photos-team':
+			$classes = array( 'badge-photos-team', 'dashicons-camera' );
+			break;
+
+		case 'photo-contributor':
+			$classes = array( 'badge-photo-contributor', 'dashicons-camera' );
+			break;
+
+		case 'performance-team':
+			// Logo defined as SVG in CSS.
+			$classes = array( 'badge-performance-team'  );
+			break;
+
+		case 'performance-contributor':
+			// Logo defined as SVG in CSS.
+			$classes = array( 'badge-performance-contributor' );
+			break;
+
+		case 'sustainability-team':
+			$classes = array( 'badge-sustainability-team', 'dashicons-admin-site-alt3' );
+			break;
+
+		case 'sustainability-contributor':
+			$classes = array( 'badge-sustainability-contributor', 'dashicons-admin-site-alt3' );
+			break;
+
+		case 'wordcamp-volunteer':
+			$classes = array( 'badge-wordcamp-volunteer', 'dashicons-hammer' );
+			break;
+
+		default:
+			$classes = array( 'badge-unknown', 'dashicons-editor-help' );
+			break;
+	}
+
+	return $classes;
+}

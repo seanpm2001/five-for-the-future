@@ -18,7 +18,7 @@
 	<div class="wp-block-group">
 		<!-- wp:post-title {"level":1,"style":{"spacing":{"margin":{"top":"0"}}}} /-->
 
-		<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+		<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|10"}},"layout":{"type":"flex","flexWrap":"wrap"}} -->
 		<div class="wp-block-group">
 			<!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"wporg-5ftf/pledge-meta","args":{"key":"org-url-link"}}}}} -->
 			<p>https://url.com</p>
@@ -72,9 +72,7 @@
 		<p></p>
 		<!-- /wp:paragraph -->
 		
-		<!-- wp:paragraph -->
-		<p>{Team list}</p>
-		<!-- /wp:paragraph -->
+		<!-- wp:wporg/pledge-teams /-->
 	</div>
 	<!-- /wp:column -->
 </div>
@@ -82,12 +80,10 @@
 
 <!-- wp:group {"align":"wide","layout":{"type":"default"}} -->
 <div class="wp-block-group alignwide">
-	<!-- wp:heading -->
-	<h2 class="wp-block-heading">Contributors</h2>
+	<!-- wp:heading {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|40"}}} -->
+	<h2 class="wp-block-heading"  style="margin-bottom:var(--wp--preset--spacing--40);">Contributors</h2>
 	<!-- /wp:heading -->
 	
-	<!-- wp:paragraph -->
-	<p>{Avatar list}</p>
-	<!-- /wp:paragraph -->
+	<!-- wp:wporg/pledge-contributors /-->
 </div>
 <!-- /wp:group -->
