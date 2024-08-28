@@ -1,8 +1,8 @@
 <?php
 namespace WordPressDotOrg\FiveForTheFuture\View;
 
-use function WordPressDotOrg\FiveForTheFuture\get_views_path;
 use WP_Post;
+use function WordPressDotOrg\FiveForTheFuture\get_views_path;
 
 /**
  * @var array        $messages
@@ -54,10 +54,10 @@ require __DIR__ . '/partial-result-messages.php';
 		require get_views_path() . 'inputs-pledge-new-misc.php';
 		?>
 
-		<div>
+		<div class="wp-block-button">
 			<input
 				type="submit"
-				class="button"
+				class="button wp-block-button__link"
 				id="5ftf-pledge-submit"
 				name="action"
 				value="<?php esc_attr_e( 'Submit Pledge', 'wporg-5ftf' ); ?>"

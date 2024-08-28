@@ -10,7 +10,7 @@ namespace WordPressDotOrg\FiveForTheFuture\View;
 
 ?>
 
-<hr />
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide"/>
 
 <form class="pledge-form" id="5ftf-form-pledge-remove" action="" method="post">
 	<h2><?php esc_html_e( 'Remove Pledge', 'wporg-5ftf' ); ?></h2>
@@ -24,8 +24,15 @@ namespace WordPressDotOrg\FiveForTheFuture\View;
 		<input type="hidden" name="action" value="remove-pledge" />
 		<input type="hidden" name="auth_token" value="<?php echo esc_attr( $auth_token ); ?>" />
 		<input type="hidden" name="pledge_id" value="<?php echo absint( $pledge_id ); ?>" />
-		<button type="submit" class="button button-danger" id="5ftf-pledge-remove">
-			<?php esc_html_e( 'Remove Pledge', 'wporg-5ftf' ); ?>
-		</button>
+
+		<div class="wp-block-button is-style-outline is-small is-destructive">
+			<button
+				type="submit"
+				class="button button-danger wp-block-button__link"
+				id="5ftf-pledge-remove"
+			>
+				<?php esc_html_e( 'Remove Pledge', 'wporg-5ftf' ); ?>
+			</button>
+		</div>
 	</p>
 </form>

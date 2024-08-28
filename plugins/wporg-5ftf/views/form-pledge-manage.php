@@ -26,10 +26,10 @@ require __DIR__ . '/partial-result-messages.php';
 		require get_views_path() . 'inputs-pledge-org-email.php';
 		?>
 
-		<div>
+		<div class="wp-block-button">
 			<input
 				type="submit"
-				class="button button-primary"
+				class="button button-primary wp-block-button__link"
 				id="5ftf-pledge-submit"
 				name="action"
 				value="<?php esc_attr_e( 'Update Pledge', 'wporg-5ftf' ); ?>"

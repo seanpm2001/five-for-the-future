@@ -6,7 +6,11 @@ use function WordPressDotOrg\FiveForTheFuture\get_views_path;
 /** @var array $contributors */
 /** @var int   $pledge_id */
 /** @var bool  $readonly */
-?>
+
+add_action(
+	is_admin() ? 'admin_footer' : 'wp_footer',
+	function () use ( $readonly ) {
+		?>
 <script type="text/template" id="tmpl-5ftf-contributor-lists">
 	<# if ( data.publish.length ) { #>
 		<h3 class="contributor-list-heading"><?php esc_html_e( 'Confirmed', 'wporg-5ftf' ); ?></h3>
@@ -51,36 +55,44 @@ use function WordPressDotOrg\FiveForTheFuture\get_views_path;
 		</th>
 		<# if ( 'pending' === data.status ) { #>
 			<td class="resend-confirm">
-				<button
-					class="button"
-					data-action="resend-contributor-confirmation"
-					data-contributor-post="{{ data.contributorId }}"
-				>
-					{{ data.resendLabel }}
-				</button>
+				<div class="wp-block-button is-style-outline is-small">
+					<button
+						class="button wp-block-button__link"
+						data-action="resend-contributor-confirmation"
+						data-contributor-post="{{ data.contributorId }}"
+					>
+						{{ data.resendLabel }}
+					</button>
+				</div>
 			</td>
 		<# } else { #>
 			<td>{{ data.publishDate }}</td>
 		<# } #>
 		<?php if ( ! $readonly ) : ?>
 		<td>
-			<button
-				class="button-link button-link-delete"
-				data-action="remove-contributor"
-				data-contributor-post="{{ data.contributorId }}"
-				data-confirm="{{ data.removeConfirm }}"
-				aria-label="{{ data.removeLabel }}"
-			>
-				<span class="dashicons dashicons-no-alt" aria-hidden="true"></span>
-				<?php esc_html_e( 'Remove', 'wporg-5ftf' ); ?>
-			</button>
+			<div class="wp-block-button is-style-outline is-small is-destructive">
+				<button
+					class="button-link button-link-delete wp-block-button__link"
+					data-action="remove-contributor"
+					data-contributor-post="{{ data.contributorId }}"
+					data-confirm="{{ data.removeConfirm }}"
+					aria-label="{{ data.removeLabel }}"
+				>
+					<span class="dashicons dashicons-no-alt" aria-hidden="true"></span>
+					<?php esc_html_e( 'Remove', 'wporg-5ftf' ); ?>
+				</button>
+			</div>
 		</td>
 		<?php endif; ?>
 	</tr>
-</script> 
+</script>
+		<?php
+	}
+);
+?>
 
 <div id="5ftf-contributors">
-	<div class="pledge-contributors pledge-status__<?php echo esc_attr( get_post_status( $pledge_id ) ); ?>">
+	<div class="pledge-contributors pledge-status__<?php echo esc_attr( get_post_status( $pledge_id ) ); ?> wp-block-table">
 		<?php if ( ! empty( $contributors ) ) : ?>
 			<?php
 			printf(
@@ -101,11 +113,13 @@ use function WordPressDotOrg\FiveForTheFuture\get_views_path;
 
 		<div id="add-contrib-message" role="alert" aria-atomic="true"></div>
 
-		<button
-			class="button button-secondary"
-			data-action="add-contributor"
-		>
-			<?php esc_html_e( 'Add new contributors', 'wporg-5ftf' ); ?>
-		</button>
+		<div class="wp-block-button is-style-outline is-small">
+			<button
+				class="button button-secondary wp-block-button__link"
+				data-action="add-contributor"
+			>
+				<?php esc_html_e( 'Add new contributors', 'wporg-5ftf' ); ?>
+			</button>
+		</div>
 	<?php endif; ?>
 </div>
