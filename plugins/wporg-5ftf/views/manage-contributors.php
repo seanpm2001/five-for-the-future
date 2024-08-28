@@ -72,7 +72,7 @@ add_action(
 		<td>
 			<div class="wp-block-button is-style-outline is-small is-destructive">
 				<button
-					class="button-link button-link-delete wp-block-button__link"
+					class="button button-link button-link-delete wp-block-button__link"
 					data-action="remove-contributor"
 					data-contributor-post="{{ data.contributorId }}"
 					data-confirm="{{ data.removeConfirm }}"
