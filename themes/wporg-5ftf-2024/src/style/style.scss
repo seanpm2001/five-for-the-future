@@ -13,3 +13,8 @@
 	border-radius: 2px;
 	box-shadow: 0 0 0 1.5px currentColor;
 }
+
+/* Remove border from search form. */
+.wp-block-search {
+	--wp--custom--form--border--width: 0;
+}
