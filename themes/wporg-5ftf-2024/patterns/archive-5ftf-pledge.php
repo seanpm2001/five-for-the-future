@@ -44,7 +44,7 @@ if ( is_search() ) {
 
 		<!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"flex","flexWrap":"nowrap"},"className":"wporg-query-filters"} -->
 		<div class="wp-block-group wporg-query-filters">
-			<!-- wp:wporg/query-filter {"key":"sort"} /-->
+			<!-- wp:wporg/query-filter {"key":"sort","multiple":false} /-->
 		</div>
 		<!-- /wp:group -->
 	</div>

@@ -9,6 +9,9 @@ namespace WordPressDotOrg\Theme\FiveForTheFuture_2024\Block_Config;
  * Actions and filters.
  */
 add_filter( 'wporg_block_navigation_menus', __NAMESPACE__ . '\add_site_navigation_menus' );
+add_filter( 'wporg_query_total_label', __NAMESPACE__ . '\update_query_total_label', 10, 2 );
+add_filter( 'wporg_query_filter_options_sort', __NAMESPACE__ . '\get_sort_options' );
+add_action( 'wporg_query_filter_in_form', __NAMESPACE__ . '\inject_other_filters' );
 add_filter( 'render_block_core/post-excerpt', __NAMESPACE__ . '\inject_excerpt_more_link', 10, 3 );
 
 /**
@@ -48,6 +51,74 @@ function add_site_navigation_menus( $menus ) {
 	return array(
 		'main' => $menu,
 	);
+}
+
+/**
+ * Update the query total label to reflect "pledges" found.
+ *
+ * @param string $label       The maybe-pluralized label to use, a result of `_n()`.
+ * @param int    $found_posts The number of posts to use for determining pluralization.
+ *
+ * @return string Updated string with total placeholder.
+ */
+function update_query_total_label( $label, $found_posts ) {
+	/* translators: %s: the result count. */
+	return _n( '%s pledge', '%s pledges', $found_posts, 'wporg-5ftf' );
+}
+
+/**
+ * Provide a list of sort options.
+ *
+ * @param array $options The options for this filter.
+ * @return array New list of category options.
+ */
+function get_sort_options( $options ) {
+	global $wp_query;
+	$sort = isset( $_GET['order'] ) ? $_GET['order'] : '';
+
+	$label = __( 'Sort: Random', 'wporg-5ftf' );
+	switch ( $sort ) {
+		case 'alphabetical':
+			$label = __( 'Sort: Alphabetical', 'wporg-5ftf' );
+			break;
+		case 'contributors':
+			$label = __( 'Sort: Total Contributors', 'wporg-5ftf' );
+			break;
+		case 'hours':
+			$label = __( 'Sort: Total Hours', 'wporg-5ftf' );
+			break;
+	}
+
+	return array(
+		'label' => $label,
+		'title' => __( 'Sort', 'wporg-5ftf' ),
+		'key' => 'order',
+		'action' => home_url( '/pledges/' ),
+		'options' => array(
+			'' => __( 'Random', 'wporg-5ftf' ),
+			'alphabetical' => __( 'Alphabetical', 'wporg-5ftf' ),
+			'contributors' => __( 'Total Contributors', 'wporg-5ftf' ),
+			'hours' => __( 'Total Hours', 'wporg-5ftf' ),
+		),
+		'selected' => [ $sort ],
+	);
+}
+
+/**
+ * Add in the search term as a hidden input in the filter form.
+ *
+ * This enables the sort filter to apply to search results, as opposed to
+ * clearing the search when selected.
+ *
+ * @param string $key The key for the current filter.
+ */
+function inject_other_filters( $key ) {
+	global $wp_query;
+
+	// Pass through search query.
+	if ( isset( $wp_query->query['s'] ) ) {
+		printf( '<input type="hidden" name="s" value="%s" />', esc_attr( $wp_query->query['s'] ) );
+	}
 }
 
 /**
