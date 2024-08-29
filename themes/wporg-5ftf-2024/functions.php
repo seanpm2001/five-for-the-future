@@ -18,6 +18,7 @@ require_once __DIR__ . '/src/pledge-teams/index.php';
  */
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );
 add_filter( 'the_content', __NAMESPACE__ . '\inject_pledge_content' );
+add_filter( 'search_template_hierarchy', __NAMESPACE__ . '\use_archive_template' );
 
 /**
  * Enqueue scripts and styles.
@@ -58,4 +59,18 @@ function inject_pledge_content( $content ) {
 	$data = get_pledge_meta( get_the_ID() );
 	$content = apply_filters( 'the_content', $data['org-description'] );
 	return $content;
+
+/**
+ * Switch to the archive.html template on search results.
+ *
+ * @param string[] $templates A list of template candidates, in descending order of priority.
+ */
+function use_archive_template( $templates ) {
+	global $wp_query;
+
+	if ( is_search() ) {
+		array_unshift( $templates, 'archive-5ftf_pledge.html' );
+	}
+
+	return $templates;
 }
