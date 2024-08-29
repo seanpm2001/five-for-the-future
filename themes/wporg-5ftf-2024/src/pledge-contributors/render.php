@@ -1,6 +1,7 @@
 <?php
 
 use WordPressDotOrg\FiveForTheFuture\Contributor;
+use const WordPressdotorg\Theme\FiveForTheFuture_2024\Pledge_Contributors\TRUNCATED_MAX;
 
 if ( ! $block->context['postId'] ) {
 	return '';
@@ -9,6 +10,16 @@ if ( ! $block->context['postId'] ) {
 $contributors = Contributor\get_contributor_user_objects(
 	Contributor\get_pledge_contributors( $block->context['postId'], 'publish' )
 );
+
+$is_truncated = isset( $attributes['className'] ) && str_contains( $attributes['className'], 'is-style-truncated' );
+
+// Initialize count to zero for untruncated view.
+$count_more = 0;
+
+if ( $is_truncated ) {
+	$count_more = count( $contributors ) - TRUNCATED_MAX;
+	$contributors = array_splice( $contributors, 0, TRUNCATED_MAX );
+}
 
 ?>
 <div
@@ -25,8 +36,11 @@ $contributors = Contributor\get_contributor_user_objects(
 					</span>
 				</li>
 			<?php endforeach; ?>
+			<?php if ( $count_more > 0 ) : ?>
+				<li class="pledge-contributors__more"><?php echo '+' . esc_html( $count_more ); ?></li>
+			<?php endif; ?>
 		</ul>
 	<?php else : ?>
-		<p><?php esc_html_e( 'No confirmed contributors yet.', 'wporg-5ftf' ); ?></p>
+		<p class="pledge-no-contributors"><?php esc_html_e( 'No confirmed contributors yet.', 'wporg-5ftf' ); ?></p>
 	<?php endif; ?>
 </div>

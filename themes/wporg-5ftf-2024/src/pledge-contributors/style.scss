@@ -1,13 +1,19 @@
-.wp-block-wporg-pledge-contributors ul {
-	display: flex;
-	flex-wrap: wrap;
-	gap: var(--wp--preset--spacing--10);
-	list-style: none;
-	padding-left: 0;
+.wp-block-wporg-pledge-contributors {
+	--wporg-pledge-contributors--spacing--size: 70px;
+	--wporg-pledge-contributors--spacing--block-gap: var(--wp--preset--spacing--10);
+
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		align-content: center;
+		gap: var(--wporg-pledge-contributors--spacing--block-gap);
+		list-style: none;
+		padding-left: 0;
+	}
 
 	li {
-		width: 70px;
-		height: 70px;
+		width: var(--wporg-pledge-contributors--spacing--size);
+		height: var(--wporg-pledge-contributors--spacing--size);
 	}
 
 	.pledge-contributor__avatar a {
@@ -21,10 +27,26 @@
 		}
 
 		img {
-			vertical-align: middle;
+			display: block;
 			border-radius: 50%;
 			max-width: 100%;
 			height: auto;
 		}
+	}
+
+	.pledge-contributors__more {
+		font-size: var(--wp--preset--font-size--small);
+		line-height: var(--wp--custom--body--small--typography--line-height);
+		align-content: center;
+	}
+
+	.pledge-no-contributors {
+		font-size: var(--wp--preset--font-size--small);
+		line-height: var(--wp--custom--body--small--typography--line-height);
+	}
+
+	&.is-style-truncated {
+		--wporg-pledge-contributors--spacing--size: 30px;
+		--wporg-pledge-contributors--spacing--block-gap: 4px;
 	}
 }

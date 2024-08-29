@@ -73,9 +73,7 @@ if ( is_search() ) {
 				</div>
 				<!-- /wp:group -->
 
-				<!-- wp:paragraph -->
-				<p>small avatar list</p>
-				<!-- /wp:paragraph -->
+				<!-- wp:wporg/pledge-contributors {"className":"is-style-truncated"} /-->
 			</div>
 			<!-- /wp:group -->
 		</div>
