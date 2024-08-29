@@ -19,6 +19,13 @@
 	--wp--custom--form--border--width: 0;
 }
 
+/* Hide the post title on search pages, or if it is in the main navigation. */
+body.search .wp-block-wporg-local-navigation-bar .wp-block-post-title,
+body.is-page-in-menu .wp-block-wporg-local-navigation-bar .wp-block-post-title {
+	display: none;
+}
+
+/* Style the group blocks inside a template list. */
 .wp-block-post:where(li.type-5ftf_pledge) {
 	> .wp-block-group {
 

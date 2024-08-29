@@ -20,6 +20,7 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );
 add_filter( 'the_content', __NAMESPACE__ . '\inject_pledge_content', 1 );
 add_filter( 'get_the_excerpt', __NAMESPACE__ . '\inject_pledge_content', 1 );
 add_filter( 'search_template_hierarchy', __NAMESPACE__ . '\use_archive_template' );
+add_filter( 'body_class', __NAMESPACE__ . '\add_body_class' );
 
 /**
  * Enqueue scripts and styles.
@@ -72,4 +73,28 @@ function use_archive_template( $templates ) {
 	}
 
 	return $templates;
+}
+
+/**
+ * Add a class to body when the current page is in the menu.
+ *
+ * @param string[] $classes An array of body class names.
+ *
+ * @return string[]
+ */
+function add_body_class( $classes ) {
+	global $wp;
+	// Get the main menu using the hooked function.
+	$menus = Block_Config\add_site_navigation_menus( [] );
+	$slug = $wp->request;
+	$has_page = array_filter(
+		$menus['main'],
+		function ( $item ) use ( $slug ) {
+			return trim( $item['url'], '/' ) === $slug;
+		}
+	);
+	if ( ! empty( $has_page ) ) {
+		$classes[] = 'is-page-in-menu';
+	}
+	return $classes;
 }
