@@ -17,7 +17,8 @@ require_once __DIR__ . '/src/pledge-teams/index.php';
  * Actions and filters.
  */
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );
-add_filter( 'the_content', __NAMESPACE__ . '\inject_pledge_content' );
+add_filter( 'the_content', __NAMESPACE__ . '\inject_pledge_content', 1 );
+add_filter( 'get_the_excerpt', __NAMESPACE__ . '\inject_pledge_content', 1 );
 add_filter( 'search_template_hierarchy', __NAMESPACE__ . '\use_archive_template' );
 
 /**
@@ -54,11 +55,9 @@ function inject_pledge_content( $content ) {
 		return $content;
 	}
 
-	remove_filter( 'the_content', __NAMESPACE__ . '\inject_pledge_content' );
-
 	$data = get_pledge_meta( get_the_ID() );
-	$content = apply_filters( 'the_content', $data['org-description'] );
-	return $content;
+	return $data['org-description'];
+}
 
 /**
  * Switch to the archive.html template on search results.
