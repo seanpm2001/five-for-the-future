@@ -65,8 +65,8 @@ if ( is_search() ) {
 				<div class="wp-block-group">
 					<!-- wp:post-title {"isLink":true,"fontSize":"heading-3"} /-->
 
-					<!-- wp:paragraph -->
-					<p>Has pledged…</p>
+					<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|charcoal-4"}}}},"textColor":"charcoal-4","metadata":{"bindings":{"content":{"source":"wporg-5ftf/pledge-meta","args":{"key":"org-contribution-short-details"}}}}} -->
+					<p class="has-charcoal-4-color has-text-color has-link-color"></p>
 					<!-- /wp:paragraph -->
 
 					<!-- wp:post-excerpt {"moreText":"[MORE]","showMoreOnNewLine":false,"excerptLength":50} /-->
