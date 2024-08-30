@@ -9,6 +9,7 @@ require_once __DIR__ . '/inc/block-config.php';
 require_once __DIR__ . '/inc/block-bindings.php';
 
 // Block files.
+require_once __DIR__ . '/src/my-pledge-list/index.php';
 require_once __DIR__ . '/src/pledge-contributors/index.php';
 require_once __DIR__ . '/src/pledge-edit-button/index.php';
 require_once __DIR__ . '/src/pledge-teams/index.php';
@@ -98,3 +99,27 @@ function add_body_class( $classes ) {
 	}
 	return $classes;
 }
+
+/**
+ * Filter the featured image to show an avatar on the `my-pledges` page.
+ *
+ * @param string       $html              The post thumbnail HTML.
+ * @param int          $post_id           The post ID.
+ * @param int          $post_thumbnail_id The post thumbnail ID, or 0 if there isn't one.
+ * @param string|int[] $size              Requested image size. Can be any registered image size name, or
+ *                                        an array of width and height values in pixels (in that order).
+ * @param string|array $attr              Query string or array of attributes.
+ *
+ * @return string Updated HTML.
+ */
+function swap_avatar_for_featured_image( $html, $post_id, $post_thumbnail_id, $size, $attr ) {
+	if ( is_page( 'my-pledges' ) && empty( $html ) ) {
+		$attr_str = '';
+		foreach ( $attr as $name => $value ) {
+			$attr_str .= " $name=" . '"' . $value . '"';
+		}
+		$html = get_avatar( wp_get_current_user(), 110, 'mystery', '', array( 'extra_attr' => $attr_str ) );
+	}
+	return $html;
+}
+add_filter( 'post_thumbnail_html', __NAMESPACE__ . '\swap_avatar_for_featured_image', 10, 5 );

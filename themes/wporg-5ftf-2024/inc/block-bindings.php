@@ -5,8 +5,9 @@
 
 namespace WordPressdotorg\Theme\FiveForTheFuture_2024\Block_Bindings;
 
+use WordPressDotOrg\FiveForTheFuture\XProfile;
 use function WordPressDotOrg\FiveForTheFuture\PledgeMeta\get_pledge_meta;
-use function WordPressDotOrg\FiveForTheFuture\XProfile\get_aggregate_contributor_data_for_pledge;
+use const WordPressDotOrg\FiveForTheFuture\Contributor\CPT_ID as CONTRIBUTOR_POST_TYPE;
 
 add_action( 'init', __NAMESPACE__ . '\register_block_bindings' );
 
@@ -48,7 +49,7 @@ function get_meta_binding_value( $args, $block ) {
 				esc_html( $data['org-domain'] )
 			);
 		case 'org-contribution-details':
-			$contribution_data = get_aggregate_contributor_data_for_pledge( $block->context['postId'] );
+			$contribution_data = XProfile\get_aggregate_contributor_data_for_pledge( $block->context['postId'] );
 			return sprintf(
 				__( '%1$s sponsors %2$s for a total of <strong>%3$s hours</strong> per week across <strong>%4$d teams</strong>.', 'wporg-5ftf' ),
 				get_the_title( $block->context['postId'] ),
@@ -60,10 +61,42 @@ function get_meta_binding_value( $args, $block ) {
 				count( $contribution_data['teams'] )
 			);
 		case 'org-contribution-short-details':
-			$contribution_data = get_aggregate_contributor_data_for_pledge( $block->context['postId'] );
+			$contribution_data = XProfile\get_aggregate_contributor_data_for_pledge( $block->context['postId'] );
 			return sprintf(
 				__( 'Has pledged %s hours per week.', 'wporg-5ftf' ),
 				number_format_i18n( absint( $contribution_data['hours'] ) ),
 			);
+		case 'user-contribution-details':
+			$user = wp_get_current_user();
+			if ( ! $user ) {
+				return '';
+			}
+
+			$profile_data = XProfile\get_contributor_user_data( $user->ID );
+
+			$contributor_publish_query = new \WP_Query( array(
+				'title'          => $user->user_login,
+				'post_type'      => CONTRIBUTOR_POST_TYPE,
+				'post_status'    => array( 'publish' ),
+				'posts_per_page' => 100,
+				'fields'         => 'ids',
+			) );
+			$pledge_count              = $contributor_publish_query->found_posts;
+			return wp_kses_data( sprintf(
+				/* translators: %1$s is the number of hours, %2$s is the number of organizations, and %3$s is an edit link. */
+				_n(
+					'Pledged <strong>%1$s hours a week</strong> %3$s across %2$s organization.',
+					'Pledged <strong>%1$s hours a week</strong> %3$s across %2$s organizations.',
+					$pledge_count,
+					'wporg-5ftf'
+				),
+				$profile_data['hours_per_week'],
+				$pledge_count,
+				sprintf(
+					'<a aria-label="%1$s" href="https://profiles.wordpress.org/me/profile/edit/group/5/">%2$s</a>',
+					__( 'edit hours pledged', 'wporg-5ftf' ),
+					__( '(edit)', 'wporg-5ftf' )
+				)
+			) );
 	}
 }
