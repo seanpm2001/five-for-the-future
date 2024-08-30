@@ -4221,15 +4221,15 @@
         },
         {
             "name": "wpackagist-plugin/gutenberg",
-            "version": "19.0.0",
+            "version": "19.1.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/19.0.0"
+                "reference": "tags/19.1.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.19.0.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.19.1.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
