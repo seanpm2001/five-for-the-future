@@ -20,8 +20,8 @@ function register_block_bindings() {
 	register_block_bindings_source(
 		'wporg-5ftf/pledge-meta',
 		array(
-			'label' => 'Pledge meta',
-			'uses_context' => [ 'postId' ],
+			'label'              => 'Pledge meta',
+			'uses_context'       => [ 'postId' ],
 			'get_value_callback' => __NAMESPACE__ . '\get_meta_binding_value',
 		)
 	);

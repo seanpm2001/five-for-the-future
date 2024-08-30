@@ -90,15 +90,15 @@ function get_sort_options( $options ) {
 	}
 
 	return array(
-		'label' => $label,
-		'title' => __( 'Sort', 'wporg-5ftf' ),
-		'key' => 'order',
-		'action' => home_url( '/pledges/' ),
-		'options' => array(
-			'' => __( 'Random', 'wporg-5ftf' ),
+		'label'    => $label,
+		'title'    => __( 'Sort', 'wporg-5ftf' ),
+		'key'      => 'order',
+		'action'   => home_url( '/pledges/' ),
+		'options'  => array(
+			''             => __( 'Random', 'wporg-5ftf' ),
 			'alphabetical' => __( 'Alphabetical', 'wporg-5ftf' ),
 			'contributors' => __( 'Total Contributors', 'wporg-5ftf' ),
-			'hours' => __( 'Total Hours', 'wporg-5ftf' ),
+			'hours'        => __( 'Total Hours', 'wporg-5ftf' ),
 		),
 		'selected' => [ $sort ],
 	);

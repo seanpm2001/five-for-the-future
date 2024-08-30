@@ -85,8 +85,8 @@ function use_archive_template( $templates ) {
 function add_body_class( $classes ) {
 	global $wp;
 	// Get the main menu using the hooked function.
-	$menus = Block_Config\add_site_navigation_menus( [] );
-	$slug = $wp->request;
+	$menus    = Block_Config\add_site_navigation_menus( [] );
+	$slug     = $wp->request;
 	$has_page = array_filter(
 		$menus['main'],
 		function ( $item ) use ( $slug ) {
