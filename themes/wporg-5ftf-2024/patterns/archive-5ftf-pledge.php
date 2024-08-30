@@ -63,7 +63,7 @@ if ( is_search() ) {
 			<div class="wp-block-group">
 				<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|10"}},"layout":{"type":"constrained"}} -->
 				<div class="wp-block-group">
-					<!-- wp:post-title {"isLink":true,"fontSize":"heading-3"} /-->
+					<!-- wp:post-title {"isLink":true,"style":{"typography":{"fontStyle":"normal","fontWeight":"600"}},"fontSize":"heading-4","fontFamily":"inter"} /-->
 
 					<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|charcoal-4"}}}},"textColor":"charcoal-4","metadata":{"bindings":{"content":{"source":"wporg-5ftf/pledge-meta","args":{"key":"org-contribution-short-details"}}}}} -->
 					<p class="has-charcoal-4-color has-text-color has-link-color"></p>
