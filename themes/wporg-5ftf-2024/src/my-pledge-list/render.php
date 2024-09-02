@@ -9,7 +9,10 @@ use function WordPressdotorg\Theme\FiveForTheFuture_2024\My_Pledge_List\{render_
 use const WordPressDotOrg\FiveForTheFuture\Contributor\CPT_ID as CONTRIBUTOR_POST_TYPE;
 
 if ( ! is_user_logged_in() ) {
-	// @todo — add error message.
+	render_notice( 'warning', sprintf(
+		__( 'Please <a href="%s">log in to your WordPress.org account</a> in order to view your pledges.', 'wporg-5ftf' ),
+		esc_url( wp_login_url( get_permalink() ) )
+	) );
 	return;
 }
 
@@ -41,7 +44,7 @@ $has_profile_data  = $profile_data['hours_per_week'] && $profile_data['team_name
 >
 	<?php
 	if ( $success_message ) {
-		render_notice( 'info', $success_message );
+		render_notice( 'success', $success_message );
 		echo '<div style="margin-top:var(--wp--preset--spacing--20);height:0" aria-hidden="true" class="wp-block-spacer"></div>';
 	}
 	?>
@@ -49,6 +52,7 @@ $has_profile_data  = $profile_data['hours_per_week'] && $profile_data['team_name
 	<?php if ( $has_contributions ) : ?>
 
 		<?php if ( $contributor_publish_posts ) : ?>
+			<h2 class="screen-reader-text"><?php esc_html_e( 'Pledges', 'wporg-5ftf' ); ?></h2>
 
 			<div class="my-pledges__list">
 				<?php
@@ -62,9 +66,9 @@ $has_profile_data  = $profile_data['hours_per_week'] && $profile_data['team_name
 
 		<?php if ( $contributor_pending_posts ) : ?>
 
-			<div class="my-pledges__list is-pending-list">
-				<h2><?php esc_html_e( 'Pending Pledges', 'wporg-5ftf' ); ?></h2>
+			<h2><?php esc_html_e( 'Pending Pledges', 'wporg-5ftf' ); ?></h2>
 
+			<div class="my-pledges__list is-pending-list">
 				<?php
 				if ( ! $has_profile_data ) {
 					render_notice(
@@ -86,12 +90,14 @@ $has_profile_data  = $profile_data['hours_per_week'] && $profile_data['team_name
 
 	<?php else : ?>
 
-		<?php echo wp_kses_data( sprintf(
-			__( 'You don’t currently have any sponsorships. If your employer is sponsoring part of your time to contribute to WordPress, please ask them to <a href="%s">submit a pledge</a> and list you as a contributor.', 'wporg-5ftf' ),
-			esc_url( $pledge_url )
-		) ); ?>
-
-		<?php // todo add some resources here about how they can convince their boss to sponsor some of their time? ?>
+		<p>
+			<?php
+			echo wp_kses_data( sprintf(
+				__( 'You don’t currently have any sponsorships. If your employer is sponsoring part of your time to contribute to WordPress, please ask them to <a href="%s">submit a pledge</a> and list you as a contributor.', 'wporg-5ftf' ),
+				esc_url( $pledge_url )
+			) );
+			?>
+		</p>
 
 	<?php endif; ?>
 </div>

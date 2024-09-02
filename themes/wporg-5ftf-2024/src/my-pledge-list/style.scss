@@ -1,18 +1,24 @@
-.my-pledges__list > * + * {
-	margin-top: var(--wp--preset--spacing--60);
-}
+.wp-block-wporg-my-pledge-list {
+	> p {
+		max-width: var(--wp--custom--layout--content-size);
+	}
 
-.my-pledges__list.is-pending-list > .wp-block-wporg-notice {
-	margin-top: var(--wp--preset--spacing--20);
-}
+	.my-pledges__list > * + * {
+		margin-top: var(--wp--preset--spacing--60);
+	}
 
-.my-pledges__pledge-actions {
-	.wp-block-button {
-		display: inline-block;
+	.my-pledges__list.is-pending-list > .wp-block-wporg-notice {
+		margin-top: var(--wp--preset--spacing--20);
+	}
 
-		[disabled="disabled"] {
-			--wp--custom--button--color--background: var(--wp--preset--color--blueberry-2);
-			pointer-events: none;
+	.my-pledges__pledge-actions {
+		.wp-block-button {
+			display: inline-block;
+
+			[disabled="disabled"] {
+				--wp--custom--button--color--background: var(--wp--preset--color--blueberry-2);
+				pointer-events: none;
+			}
 		}
 	}
 }
