@@ -3,6 +3,10 @@
 	color: var(--wp--preset--color--white) !important;
 }
 
+.edit-pledge-wrapper .wp-block-button__link .dashicons {
+	display: none;
+}
+
 .pledge-dialog {
 	position: absolute;
 	z-index: 100;
