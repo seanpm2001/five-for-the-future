@@ -12,6 +12,8 @@ use WP_Post;
  */
 ?>
 
+<div style="height:0;" aria-hidden="true" class="wp-block-spacer"></div>
+
 <?php if ( true === $email_confirmed ) : ?>
 
 	<div class="notice notice-success notice-alt">
@@ -56,22 +58,22 @@ use WP_Post;
 			// There could be other reasons it failed, like an invalid token, but this is the most common reason,
 			// and the only one that normal users should experience, so we're assuming it in order to provide
 			// the best UX.
-			esc_html_e( 'Your confirmation link has expired, please obtain a new one:', 'wporg-5ftf' );
+			esc_html_e( 'Your confirmation link has expired, please obtain a new one.', 'wporg-5ftf' );
 			?>
 		</p>
-
-		<form action="" method="get">
-			<input type="hidden" name="pledge_id" value="<?php echo esc_attr( $pledge_id ); ?>" />
-			<input type="hidden" name="action" value="resend_pledge_confirmation" />
-
-			<p>
-				<input
-					type="submit"
-					class="button"
-					value="Resend Confirmation"
-				/>
-			</p>
-		</form>
 	</div>
+
+	<form action="" method="get">
+		<input type="hidden" name="pledge_id" value="<?php echo esc_attr( $pledge_id ); ?>" />
+		<input type="hidden" name="action" value="resend_pledge_confirmation" />
+
+		<p class="wp-block-button is-small">
+			<input
+				type="submit"
+				class="button wp-block-button__link"
+				value="<?php esc_html_e( 'Resend confirmation', 'wporg-5ftf' ); ?>"
+			/>
+		</p>
+	</form>
 
 <?php endif; ?>
