@@ -67,11 +67,11 @@ function get_meta_binding_value( $args, $block ) {
 				number_format_i18n( absint( $contribution_data['hours'] ) ),
 			);
 		case 'user-contribution-details':
-			$user = wp_get_current_user();
-			if ( ! $user ) {
+			if ( ! is_user_logged_in() ) {
 				return '';
 			}
 
+			$user = wp_get_current_user();
 			$profile_data = XProfile\get_contributor_user_data( $user->ID );
 
 			$contributor_publish_query = new \WP_Query( array(
