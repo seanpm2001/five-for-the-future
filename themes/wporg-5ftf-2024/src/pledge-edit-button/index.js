@@ -15,7 +15,6 @@ const Edit = () => {
 	return (
 		<div { ...blockProps }>
 			<button>
-				<span className="dashicons dashicons-edit" aria-hidden="true"></span>
 				Edit Pledge
 			</button>
 		</div>

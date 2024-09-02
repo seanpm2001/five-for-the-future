@@ -29,11 +29,25 @@
 		background: none;
 		border: none;
 	}
+
+	/* Update layout to floating modal on smaller screens. */
+	@media (max-width: 889px) {
+		position: fixed;
+		top: 80px !important;
+		right: var(--wp--preset--spacing--30) !important;
+		left: var(--wp--preset--spacing--30) !important;
+		width: calc(100% - var(--wp--preset--spacing--30) * 2);
+		z-index: 251; /* header + 1. */
+	}
+
+	@media (max-width: 600px) {
+		top: var(--wp--preset--spacing--30) !important;
+	}
 }
 
 .pledge-dialog__background {
 	position: fixed;
-	z-index: 99;
+	z-index: 251; /* header + 1. */
 	top: 0;
 	left: 0;
 	bottom: 0;
@@ -41,5 +55,10 @@
 
 	&[hidden] {
 		display: none;
+	}
+
+	/* Update layout to floating modal on smaller screens. */
+	@media (max-width: 889px) {
+		background-color: rgba(0, 0, 0, 0.15);
 	}
 }

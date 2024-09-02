@@ -20,6 +20,13 @@ jQuery( document ).ready( function( $ ) {
 		const bounds = button.getBoundingClientRect();
 		const modalWidth = 300; // Modal width is hardcoded, because it's not visible yet.
 
+		if ( button.closest('.wp-block-wporg-pledge-edit-button') ) {
+			return {
+				top: bounds.y + offsetTop + bounds.height,
+				left: bounds.x + offsetLeft,
+			};
+		}
+
 		return {
 			top: bounds.y + offsetTop + bounds.height,
 			left: bounds.x + offsetLeft + bounds.width - modalWidth,
