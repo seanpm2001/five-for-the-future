@@ -15,6 +15,15 @@
 	box-shadow: 0 0 0 1.5px currentColor;
 }
 
+/* Style the homepage top section. */
+.is-hero-section {
+
+	@media (max-width: 1080px) {
+		flex-direction: column;
+		row-gap: var(--wp--preset--spacing--40);
+	}
+}
+
 /* Remove border from search form. */
 .wp-block-search {
 	--wp--custom--form--border--width: 0;
