@@ -43,21 +43,3 @@
 		display: none;
 	}
 }
-
-.pledge-email-form {
-	label {
-		display: inline-block;
-		margin-bottom: 4px;
-	}
-
-	input[type="email"] {
-		display: block;
-		width: 100%;
-		margin: 0 0 var(--wp--preset--spacing--10) 0;
-		box-shadow: none;
-	}
-
-	.message {
-		margin: 0 0 var(--wp--preset--spacing--10) 0;
-	}
-}

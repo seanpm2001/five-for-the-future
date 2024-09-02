@@ -5,6 +5,7 @@
 
 @import "notice";
 @import "pledge-form";
+@import "pledge-email-form";
 
 /* Add default focus style. */
 :where(main) a:where(:not(.wp-element-button,.wp-block-wporg-link-wrapper)):focus,
