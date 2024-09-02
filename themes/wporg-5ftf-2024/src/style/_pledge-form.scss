@@ -94,12 +94,19 @@
 		margin-bottom: 1.5rem;
 		width: 100%;
 		border-collapse: collapse;
+		font-size: var(--wp--preset--font-size--small);
+		line-height: var(--wp--custom--body--small--typography--line-height);
 
 		th,
 		td,
 		th *,
 		td * {
 			vertical-align: middle;
+		}
+
+		th,
+		td {
+			padding: var(--wp--preset--spacing--10);
 		}
 
 		thead {
