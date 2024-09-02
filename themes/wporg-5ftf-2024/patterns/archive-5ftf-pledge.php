@@ -55,7 +55,7 @@ if ( is_search() ) {
 		<div class="wp-block-group">
 			<!-- wp:group {"style":{"border":{"style":"solid","width":"1px","color":"#d9d9d9","radius":"2px"},"spacing":{"padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20","left":"var:preset|spacing|20","right":"var:preset|spacing|20"}}},"backgroundColor":"light-grey-2","layout":{"type":"constrained"}} -->
 			<div class="wp-block-group has-border-color has-light-grey-2-background-color has-background" style="border-color:#d9d9d9;border-style:solid;border-width:1px;border-radius:2px;padding-top:var(--wp--preset--spacing--20);padding-right:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20);padding-left:var(--wp--preset--spacing--20)">
-				<!-- wp:post-featured-image {"aspectRatio":"1","width":"275px","scale":"contain"} /-->
+				<!-- wp:post-featured-image {"aspectRatio":"4/3","width":"275px","scale":"contain"} /-->
 			</div>
 			<!-- /wp:group -->
 
