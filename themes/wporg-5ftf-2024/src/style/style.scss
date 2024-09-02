@@ -36,6 +36,7 @@ body.is-page-in-menu .wp-block-wporg-local-navigation-bar .wp-block-post-title {
 }
 
 /* Style the group blocks inside a template list. */
+.wp-block-wporg-my-pledge-list .my-pledges__list,
 .wp-block-post:where(li.type-5ftf_pledge) {
 	> .wp-block-group {
 
