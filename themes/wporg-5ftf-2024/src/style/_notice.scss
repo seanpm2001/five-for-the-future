@@ -3,8 +3,8 @@
 	--wp--custom--wporg-notice--color--background: var(--wp--preset--color--acid-green-3, #e2ffed);
 	--wp--custom--wporg-notice--color--text: var(--wp--preset--color--charcoal-1, #1e1e1e);
 
-	padding: var(--wp--preset--spacing--10);
-	padding-left: calc(var(--wp--preset--spacing--10) * 2 + 24px);
+	padding: var(--wp--preset--spacing--20);
+	padding-left: calc(var(--wp--preset--spacing--20) + 24px + 8px);
 	color: var(--wp--custom--wporg-notice--color--text);
 	background-color: var(--wp--custom--wporg-notice--color--background);
 	border-radius: 2px;
@@ -14,7 +14,7 @@
 	/* stylelint-disable-next-line */
 	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cg stroke='%23008A20' stroke-width='1.5'%3E%3Cpath d='m8.25 13 2.629 2L15.5 9'/%3E%3Ccircle cx='12' cy='12' r='8.25'/%3E%3C/g%3E%3C/svg%3E%0A");
 	background-repeat: no-repeat;
-	background-position: var(--wp--preset--spacing--10) var(--wp--preset--spacing--10);
+	background-position: var(--wp--preset--spacing--20) var(--wp--preset--spacing--20);
 	background-size: 24px 24px;
 	margin-top: 1px;
 
