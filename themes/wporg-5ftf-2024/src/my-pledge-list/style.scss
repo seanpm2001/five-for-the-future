@@ -12,6 +12,12 @@
 	}
 
 	.my-pledges__pledge-actions {
+		form {
+			display: flex;
+			flex-wrap: wrap;
+			gap: var(--wp--preset--spacing--20);
+		}
+
 		.wp-block-button {
 			display: inline-block;
 

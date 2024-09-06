@@ -58,14 +58,14 @@ function render_single_pledge( $contributor_post, $has_profile_data ) {
 			</p>
 			<!-- /wp:paragraph -->
 
-			<div class="my-pledges__pledge-actions">
+			<div class="my-pledges__pledge-actions" style="margin-top:var(--wp--preset--spacing--20)">
 				<form action="" method="post">
 					<input type="hidden" name="contributor_post_id" value="<?php echo esc_attr( $contributor_post->ID ); ?>" />
 
 					<?php if ( 'pending' === $contributor_post->post_status ) : ?>
 						<?php wp_nonce_field( 'join_decline_organization_' . $contributor_post->ID ); ?>
 
-						<div class="wp-block-button is-small">
+						<div class="wp-block-button">
 							<input
 								type="submit"
 								class="button button-default wp-block-button__link wp-element-button"
@@ -77,7 +77,7 @@ function render_single_pledge( $contributor_post, $has_profile_data ) {
 							/>
 						</div>
 
-						<div class="wp-block-button is-style-outline is-small">
+						<div class="wp-block-button is-style-outline">
 							<input
 								type="submit"
 								class="button button-danger button-link wp-block-button__link wp-element-button"
@@ -89,7 +89,7 @@ function render_single_pledge( $contributor_post, $has_profile_data ) {
 					<?php elseif ( 'publish' === $contributor_post->post_status ) : ?>
 						<?php wp_nonce_field( 'leave_organization_' . $contributor_post->ID ); ?>
 
-						<div class="wp-block-button is-style-outline is-destructive is-small">
+						<div class="wp-block-button is-style-outline is-destructive">
 							<input
 								type="submit"
 								class="button button-danger wp-block-button__link wp-element-button"
