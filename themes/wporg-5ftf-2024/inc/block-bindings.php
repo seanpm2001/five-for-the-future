@@ -63,7 +63,7 @@ function get_meta_binding_value( $args, $block ) {
 		case 'org-contribution-short-details':
 			$contribution_data = XProfile\get_aggregate_contributor_data_for_pledge( $block->context['postId'] );
 			return sprintf(
-				__( 'Has pledged %s hours per week.', 'wporg-5ftf' ),
+				__( 'pledges %s hours per week.', 'wporg-5ftf' ),
 				number_format_i18n( absint( $contribution_data['hours'] ) ),
 			);
 		case 'user-contribution-details':
