@@ -64,8 +64,8 @@
 
 	<!-- wp:column {"width":"40%"} -->
 	<div class="wp-block-column" style="flex-basis:40%">
-		<!-- wp:heading {"style":{"spacing":{"margin":{"top":"0"}},"typography":{"fontStyle":"normal","fontWeight":"600"}},"fontSize":"heading-5","fontFamily":"inter"} -->
-		<h2 class="wp-block-heading has-inter-font-family has-heading-5-font-size" style="margin-top:0;font-style:normal;font-weight:600">Contributions</h2>
+		<!-- wp:heading {"style":{"spacing":{"margin":{"top":"0"}},"typography":{"fontStyle":"normal","fontWeight":"600"}},"fontSize":"large","fontFamily":"inter"} -->
+		<h2 class="wp-block-heading has-inter-font-family has-large-font-size" style="margin-top:0;font-style:normal;font-weight:600">Contributions</h2>
 		<!-- /wp:heading -->
 		
 		<!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"wporg-5ftf/pledge-meta","args":{"key":"org-contribution-details"}}}}} -->
@@ -78,12 +78,12 @@
 </div>
 <!-- /wp:columns -->
 
-<!-- wp:group {"align":"wide","layout":{"type":"default"}} -->
-<div class="wp-block-group alignwide">
-	<!-- wp:heading {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|40"}}} -->
-	<h2 class="wp-block-heading"  style="margin-bottom:var(--wp--preset--spacing--40);">Contributors</h2>
+<!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}},"layout":{"type":"default"}} -->
+<div class="wp-block-group alignwide" style="margin-top:var(--wp--preset--spacing--40)">
+	<!-- wp:heading {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|40"}},"typography":{"fontStyle":"normal","fontWeight":"600"}},"fontSize":"large","fontFamily":"inter"} -->
+	<h2 class="wp-block-heading has-inter-font-family has-large-font-size" style="margin-bottom:var(--wp--preset--spacing--40);font-style:normal;font-weight:600">Contributors</h2>
 	<!-- /wp:heading -->
-	
+
 	<!-- wp:wporg/pledge-contributors /-->
 </div>
 <!-- /wp:group -->
