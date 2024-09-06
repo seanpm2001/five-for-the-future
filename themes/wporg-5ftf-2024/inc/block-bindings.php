@@ -85,8 +85,8 @@ function get_meta_binding_value( $args, $block ) {
 			return wp_kses_data( sprintf(
 				/* translators: %1$s is the number of hours, %2$s is the number of organizations, and %3$s is an edit link. */
 				_n(
-					'Pledged <strong>%1$s hours a week</strong> %3$s across %2$s organization.',
-					'Pledged <strong>%1$s hours a week</strong> %3$s across %2$s organizations.',
+					'You pledge <strong>%1$s hours a week</strong> %3$s across %2$s organization.',
+					'You pledge <strong>%1$s hours a week</strong> %3$s across %2$s organizations.',
 					$pledge_count,
 					'wporg-5ftf'
 				),
