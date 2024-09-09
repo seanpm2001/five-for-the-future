@@ -6,8 +6,8 @@
  */
 
 ?>
-<!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|40"},"blockGap":"var:preset|spacing|40"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group alignwide" style="margin-bottom:var(--wp--preset--spacing--40)">
+<!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|40"},"blockGap":"var:preset|spacing|40"}},"layout":{"type":"flex","flexWrap":"nowrap"},"className":"my-pledges-header"} -->
+<div class="wp-block-group alignwide my-pledges-header" style="margin-bottom:var(--wp--preset--spacing--40)">
 	<!-- wp:group {"style":{"border":{"radius":"50%"}},"backgroundColor":"light-grey-2","layout":{"type":"constrained"}} -->
 	<div class="wp-block-group has-light-grey-2-background-color has-background" style="border-radius:50%">
 		<!-- wp:post-featured-image {"aspectRatio":"1","width":"110px","scale":"contain","style":{"border":{"radius":"50%"}}} /-->

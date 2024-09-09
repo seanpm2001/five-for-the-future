@@ -71,3 +71,16 @@ body.is-page-in-menu .wp-block-wporg-local-navigation-bar .wp-block-post-title {
 		}
 	}
 }
+
+/* Style the my pledges header */
+.my-pledges-header {
+
+	@media (max-width: 600px) {
+		flex-direction: column;
+		margin-block-end: 40px !important;
+
+		> .wp-block-group {
+			align-items: center;
+		}
+	}
+}

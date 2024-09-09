@@ -45,7 +45,7 @@ $has_profile_data  = $profile_data['hours_per_week'] && $profile_data['team_name
 	<?php
 	if ( $success_message ) {
 		render_notice( 'success', $success_message );
-		echo '<div style="margin-top:var(--wp--preset--spacing--20);height:0" aria-hidden="true" class="wp-block-spacer"></div>';
+		echo '<div style="margin-top:var(--wp--preset--spacing--40);height:0" aria-hidden="true" class="wp-block-spacer"></div>';
 	}
 	?>
 

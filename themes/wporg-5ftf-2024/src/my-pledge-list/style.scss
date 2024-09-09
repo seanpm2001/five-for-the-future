@@ -11,6 +11,14 @@
 		margin-top: var(--wp--preset--spacing--20);
 	}
 
+	> h2 {
+		margin-top: 80px !important;
+
+		@media (max-width: 600px) {
+			margin-top: 40px !important;
+		}
+	}
+
 	.my-pledges__pledge-actions {
 		form {
 			display: flex;
