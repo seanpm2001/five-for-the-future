@@ -44,14 +44,14 @@
 	<div class="wp-block-column" style="flex-basis:60%">
 		<!-- wp:post-content /-->
 
-		<!-- wp:separator {"className":"is-style-wide","style":{"spacing":{"margin":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|20"}}},"backgroundColor":"black-opacity-15"} -->
-		<hr class="wp-block-separator has-text-color has-black-opacity-15-color has-alpha-channel-opacity has-black-opacity-15-background-color has-background is-style-wide" style="margin-top:var(--wp--preset--spacing--30);margin-bottom:var(--wp--preset--spacing--20)"/>
+		<!-- wp:separator {"className":"is-style-wide","style":{"spacing":{"margin":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30"}},"color":{"background":"#00000012"}}} -->
+		<hr class="wp-block-separator has-text-color has-alpha-channel-opacity has-background is-style-wide" style="margin-top:var(--wp--preset--spacing--30);margin-bottom:var(--wp--preset--spacing--30);background-color:#00000012;color:#00000012"/>
 		<!-- /wp:separator -->
 
-		<!-- wp:buttons {"style":{"spacing":{"blockGap":"5px"}}} -->
+		<!-- wp:buttons -->
 		<div class="wp-block-buttons">
 			<!-- wp:button -->
-			<div class="wp-block-button is-style-text is-destructive is-small">
+			<div class="wp-block-button is-style-outline is-destructive is-small">
 				<a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/report/' ) ); ?>"><?php esc_html_e( 'Report a problem', 'wporg-5ftf' ); ?></a>
 			</div>
 			<!-- /wp:button -->

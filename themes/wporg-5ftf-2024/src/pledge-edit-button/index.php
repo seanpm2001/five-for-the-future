@@ -44,7 +44,7 @@ function render( $attributes, $content, $block ) {
 	$html->next_tag( 'button' );
 	$html->add_class( 'wp-block-button__link' );
 
-	$wrapper_attributes = get_block_wrapper_attributes( [ 'class' => 'wp-block-button is-style-text is-small' ]);
+	$wrapper_attributes = get_block_wrapper_attributes( [ 'class' => 'wp-block-button is-style-outline is-small' ]);
 	return sprintf(
 		'<div %s>%s</div>',
 		$wrapper_attributes,
