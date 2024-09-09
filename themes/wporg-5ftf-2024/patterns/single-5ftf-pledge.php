@@ -20,8 +20,8 @@
 
 		<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|10"}},"layout":{"type":"flex","flexWrap":"wrap"}} -->
 		<div class="wp-block-group">
-			<!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"wporg-5ftf/pledge-meta","args":{"key":"org-url-link"}}}}} -->
-			<p>https://url.com</p>
+			<!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"wporg-5ftf/pledge-meta","args":{"key":"org-url-link"}}}},"className":"external-link"} -->
+			<p class="external-link">https://url.com</p>
 			<!-- /wp:paragraph -->
 
 			<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|charcoal-5"}}}},"textColor":"charcoal-5","fontSize":"extra-small"} -->
