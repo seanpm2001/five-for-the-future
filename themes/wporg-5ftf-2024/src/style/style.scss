@@ -49,17 +49,24 @@ body.is-page-in-menu .wp-block-wporg-local-navigation-bar .wp-block-post-title {
 				max-width: 110px;
 			}
 		}
+	}
 
-		@media (max-width: 600px) {
+	@media (max-width: 600px) {
+		+ * {
+			margin-block-start: 40px;
+		}
+
+		> .wp-block-group {
 			flex-direction: column;
 
 			> .wp-block-group:first-child {
-				max-width: 100%;
+				width: 100%;
 				align-self: center;
 			}
 
 			.wp-block-post-featured-image {
 				max-width: 100%;
+				width: 200px !important;
 			}
 		}
 	}

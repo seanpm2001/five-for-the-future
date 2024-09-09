@@ -50,7 +50,7 @@ if ( is_search() ) {
 	</div>
 	<!-- /wp:group -->
 
-	<!-- wp:post-template {"style":{"spacing":{"blockGap":"var:preset|spacing|60"}}} -->
+	<!-- wp:post-template {"style":{"spacing":{"blockGap":"80px"}}} -->
 		<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|70"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
 		<div class="wp-block-group">
 			<!-- wp:group {"style":{"border":{"radius":"2px"},"spacing":{"padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20","left":"var:preset|spacing|20","right":"var:preset|spacing|20"}}},"backgroundColor":"light-grey-2","layout":{"type":"constrained"}} -->
