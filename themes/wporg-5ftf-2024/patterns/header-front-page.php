@@ -25,7 +25,7 @@
 		<!-- wp:site-title {"level":1,"isLink":false,"style":{"typography":{"fontSize":"50px","lineHeight":"1.2"}}} /-->
 
 		<!-- wp:paragraph {"style":{"typography":{"lineHeight":"2.3"}},"textColor":"white"} -->
-		<p class="has-white-color has-text-color" style="line-height:2.3">WordPress fuels more than a third of the web. Are you a part of it?</p>
+		<p class="has-white-color has-text-color" style="line-height:2.3"><?php esc_html_e( 'Commit to the future of WordPress and the open web.', 'wporg-5ftf' ); ?></p>
 		<!-- /wp:paragraph -->
 	
 	</div>
