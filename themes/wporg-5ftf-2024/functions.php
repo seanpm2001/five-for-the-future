@@ -23,6 +23,9 @@ add_filter( 'get_the_excerpt', __NAMESPACE__ . '\inject_pledge_content', 1 );
 add_filter( 'search_template_hierarchy', __NAMESPACE__ . '\use_archive_template' );
 add_filter( 'body_class', __NAMESPACE__ . '\add_body_class' );
 
+// Remove table of contents.
+add_filter( 'wporg_handbook_toc_should_add_toc', '__return_false' );
+
 /**
  * Enqueue scripts and styles.
  */
