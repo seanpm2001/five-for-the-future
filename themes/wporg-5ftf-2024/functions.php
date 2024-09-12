@@ -23,6 +23,7 @@ add_filter( 'the_content', __NAMESPACE__ . '\inject_pledge_content', 1 );
 add_filter( 'get_the_excerpt', __NAMESPACE__ . '\inject_pledge_content', 1 );
 add_filter( 'search_template_hierarchy', __NAMESPACE__ . '\use_archive_template' );
 add_filter( 'body_class', __NAMESPACE__ . '\add_body_class' );
+add_filter( 'wp_calculate_image_srcset', __NAMESPACE__ . '\modify_image_srcset', 10, 3 );
 
 // Remove table of contents.
 add_filter( 'wporg_handbook_toc_should_add_toc', '__return_false' );
@@ -127,3 +128,23 @@ function swap_avatar_for_featured_image( $html, $post_id, $post_thumbnail_id, $s
 	return $html;
 }
 add_filter( 'post_thumbnail_html', __NAMESPACE__ . '\swap_avatar_for_featured_image', 10, 5 );
+
+/**
+ * Filter the sizes attributes for specific images.
+ *
+ * @param array  $sources    One or more arrays of source data to include in the 'srcset'.
+ * @param array  $size_array An array of requested width and height values.
+ * @param string $image_src  The 'src' of the image.
+ *
+ * @return array
+ */
+function modify_image_srcset( $sources, $size_array, $image_src ) {
+	// The main header image is set with a fixed height, and when the smaller
+	// screen sizes are used, it scales up to that height causing pixelation.
+	if ( str_contains( $image_src, '5ftf-wordcamp.jpg' ) ) {
+		// These sizes are smaller than 260px tall.
+		unset( $sources[1024], $sources[768], $sources[300] );
+	}
+
+	return $sources;
+}
