@@ -4221,15 +4221,15 @@
         },
         {
             "name": "wpackagist-plugin/gutenberg",
-            "version": "19.1.0",
+            "version": "19.2.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/19.1.0"
+                "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.19.1.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.zip?timestamp=1726098898"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -4279,12 +4279,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/wporg-mu-plugins.git",
-                "reference": "506a2079ab12020fc7bb890343ffcfb1e05c6fb3"
+                "reference": "479836f8199cd76a0b455aeaac1e9c3091b6a1de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress/wporg-mu-plugins/zipball/506a2079ab12020fc7bb890343ffcfb1e05c6fb3",
-                "reference": "506a2079ab12020fc7bb890343ffcfb1e05c6fb3",
+                "url": "https://api.github.com/repos/WordPress/wporg-mu-plugins/zipball/479836f8199cd76a0b455aeaac1e9c3091b6a1de",
+                "reference": "479836f8199cd76a0b455aeaac1e9c3091b6a1de",
                 "shasum": ""
             },
             "require": {
@@ -4325,7 +4325,7 @@
                 "source": "https://github.com/WordPress/wporg-mu-plugins/tree/build",
                 "issues": "https://github.com/WordPress/wporg-mu-plugins/issues"
             },
-            "time": "2024-09-09T21:30:44+00:00"
+            "time": "2024-09-11T21:04:26+00:00"
         },
         {
             "name": "wporg/wporg-parent-2021",
