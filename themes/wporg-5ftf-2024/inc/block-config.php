@@ -47,6 +47,14 @@ function add_site_navigation_menus( $menus ) {
 		'url'       => '/my-pledges/',
 		'className' => 'has-separator',
 	);
+	if ( ! is_user_logged_in() ) {
+		global $wp;
+		$redirect_url = home_url( $wp->request );
+		$menu[] = array(
+			'label' => __( 'Log in', 'wporg-5ftf' ),
+			'url' => wp_login_url( $redirect_url ),
+		);
+	}
 
 	return array(
 		'main' => $menu,
