@@ -20,6 +20,8 @@ add_filter( 'render_block_core/post-excerpt', __NAMESPACE__ . '\inject_excerpt_m
 function add_site_navigation_menus( $menus ) {
 	global $wp_query;
 
+	$is_handbook = function_exists( 'wporg_is_handbook' ) && wporg_is_handbook();
+
 	$menu = array();
 
 	$menu[] = array(
@@ -33,6 +35,7 @@ function add_site_navigation_menus( $menus ) {
 	$menu[] = array(
 		'label' => __( 'Handbook', 'wporg-5ftf' ),
 		'url'   => '/handbook/',
+		'className' => $is_handbook ? 'current-menu-item' : '',
 	);
 	$menu[] = array(
 		'label' => __( 'Pledges', 'wporg-5ftf' ),
