@@ -7,6 +7,7 @@ use const WordPressDotOrg\FiveForTheFuture\Pledge\CPT_ID as PLEDGE_POST_TYPE;
 
 require_once __DIR__ . '/inc/block-config.php';
 require_once __DIR__ . '/inc/block-bindings.php';
+require_once __DIR__ . '/inc/seo-social-meta.php';
 
 // Block files.
 require_once __DIR__ . '/src/my-pledge-list/index.php';
