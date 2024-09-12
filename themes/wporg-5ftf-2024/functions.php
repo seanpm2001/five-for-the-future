@@ -44,7 +44,7 @@ function enqueue_assets() {
 	wp_enqueue_style(
 		'wporg-5ftf-2024',
 		get_theme_file_uri( 'build/style/style-index.css' ),
-		array( 'wporg-parent-2021-style', 'wporg-global-fonts', 'dashicons' ),
+		array( 'wporg-parent-2021-style', 'wporg-global-fonts' ),
 		$metadata['version']
 	);
 }
