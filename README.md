@@ -41,6 +41,8 @@ In order to contribute with code changes, you'll want to set up a local environm
 	npm run wp-env start
 	```
 
+If you're using a different local environment, or don't want to use wp-env, you can skip that step and just replace `wp-content` with this repo, so that the themes and plugins are in the correct places.
+
 
 ### Configuring the site
 
