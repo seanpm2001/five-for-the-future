@@ -11,7 +11,6 @@
 	},
 	"scripts": {
 		"setup:tools": "npm install && composer install",
-		"setup:wp": "wp-env run cli bash env/setup.sh",
 		"build:old-theme": "npm run build --workspace=wporg-5ftf",
 		"start:old-theme": "npm run watch --workspace=wporg-5ftf",
 		"build:theme": "npm run build --workspace=wporg-5ftf-2024",

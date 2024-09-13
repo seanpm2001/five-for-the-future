@@ -9,22 +9,43 @@ The program encourages organizations to contribute five percent of their resourc
 
 In order to contribute with code changes, you'll want to set up a local environment to test changes and then push the changes to a Pull Request on this Github Repository.
 
+
+### Prerequisites
+
+* Docker
+* Node (v20), npm
+* Composer
+
+⚠️ Note: this repo does not use Yarn, it uses vanilla npm. You should be using Node 20 (LTS), for example at the time of writing, the current version is 20.17.0, which comes with npm 10.8.2. Modern versions of npm have workspace features similar to how we already use yarn.
+
+
 ### Initial environment setup
 
-1. Use whichever local WordPress development setup you prefer and create a new local WP site.
-1. Find the `wp-content` folder and delete it (make a backup if you have data you don't want to lose data you already have there).
 1. Fork the [five-for-the-future](https://github.com/WordPress/five-for-the-future) repository under your own Github account.
 1. Run `git clone git@github.com:[your username]/five-for-the-future.git wp-content`, replacing `[your username]` with your github username to clone your forked repo.
-1. Ensure this newly cloned `wp-content` folder is where it should be in the WP structure.
-1. Copy over the base theme with: `svn export https://meta.svn.wordpress.org/sites/trunk/wordpress.org/public_html/wp-content/themes/pub/wporg themes/pub/wporg` (this should be run from the `wp-content` folder).
-1. Install the sandbox mu-plugin with `cd wp-content && mkdir mu-plugins && ln -s .env/0-sandbox.php mu-plugins/0-sandbox.php`
-1. Run `composer install` inside the content directory.
+1. Set up repo dependencies.
+
+	```bash
+	npm run setup:tools
+	```
+
+1. Build the project.
+
+	```bash
+	npm run build:theme
+	```
+
+1. Start the local environment.
+
+	```bash
+	npm run wp-env start
+	```
 
 
 ### Configuring the site
 
 1. Login to your site and activate the "Five for the Future" theme and plugin.
-1. Navigate to `/wp-content/themes/wporg-5ftf` and run: `npm install && npm run build`
+
 
 ### Setting up default data
 
