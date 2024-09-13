@@ -10,13 +10,13 @@
 		"@wordpress/scripts": "28.6.0"
 	},
 	"scripts": {
-		"setup:tools": "npm install && composer install && TEXTDOMAIN=wporg-5ftf composer exec update-configs",
+		"setup:tools": "npm install && composer install",
 		"setup:wp": "wp-env run cli bash env/setup.sh",
 		"build:old-theme": "npm run build --workspace=wporg-5ftf",
 		"start:old-theme": "npm run watch --workspace=wporg-5ftf",
 		"build:theme": "npm run build --workspace=wporg-5ftf-2024",
 		"start:theme": "npm run start --workspace=wporg-5ftf-2024",
-		"update:tools": "composer update && TEXTDOMAIN=wporg-5ftf composer exec update-configs",
+		"update:tools": "composer update",
 		"wp-env": "wp-env",
 		"lint:php": "composer lint ./themes/wporg-5ftf ./themes/wporg-5ftf-2024 ./plugins/wporg-5ftf",
 		"format:php": "composer format ./themes/wporg-5ftf ./themes/wporg-5ftf-2024 ./plugins/wporg-5ftf",

@@ -35,10 +35,6 @@
 		},
 		{
 			"type": "vcs",
-			"url": "git@github.com:WordPress/wporg-repo-tools.git"
-		},
-		{
-			"type": "vcs",
 			"url": "git@github.com:WordPress/wporg-mu-plugins.git"
 		},
 		{
@@ -85,7 +81,6 @@
 		"wpackagist-plugin/wordpress-importer": "*",
 		"wporg/wporg-mu-plugins": "dev-build",
 		"wporg/wporg-parent-2021": "dev-build",
-		"wporg/wporg-repo-tools": "dev-trunk",
 		"yoast/phpunit-polyfills": "^1.1"
 	},
 	"scripts": {
