@@ -29,7 +29,7 @@
 			<!-- /wp:paragraph -->
 
 			<!-- wp:paragraph -->
-			<p><?php esc_html_e( 'This organization contributes 5% of their resources to the WordPress project.', 'wporg-5ftf' ); ?></p>
+			<p><?php esc_html_e( 'This organization contributes resources to the WordPress project.', 'wporg-5ftf' ); ?></p>
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:group -->
