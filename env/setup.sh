@@ -2,7 +2,7 @@
 
 root=$( dirname $( wp config path ) )
 
-#wp db import "${root}/env/bpmain_bp_xprofile_data.sql"
+wp db import "${root}/env/bpmain_bp_xprofile_data.sql"
 
 wp theme activate wporg-5ftf-2024
 wp plugin activate wporg-5ftf
