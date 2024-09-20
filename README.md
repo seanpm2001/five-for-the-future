@@ -59,15 +59,16 @@ If you're using a different local environment, or don't want to use wp-env, you 
 
 1. Save your permalinks: `Settings > Permalinks`.
 1. Configure your first pledge.
-	1. Visit `Five for the future > Pledges`
-	1. Add `Administrator Email Address` -> Any address
-	1. Add `Organization Name` -> Any name
-	1. Add `Website Address` -> Any web address
-	1. Add `Organization Blurb` -> Any content
+	1. Visit `Five for the future > Pledges`.
+	1. Add `Administrator Email Address` -> Any address.
+	1. Add `Organization Name` -> Any name.
+	1. Add `Website Address` -> Any web address.
+	1. Add `Organization Blurb` -> Any content.
 	1. Add `Contributor Usernames` -> Use any of the users listed in `wp-admin/users.php` excluding admin.
 	  1. Technically you can use any wp.org user but we use dummy data added in `./env/bpmain_bp_xprofile_data.sql` which maps to these user IDs.
+	1. Set a `featured image`.
 	1. Click `Update` to publish draft pledge. 
-	1. Visit `Five for the future > Contributors`
+	1. Visit `Five for the future > Contributors`.
 		1. Click on any `Pending` contributors and `Publish` them.
 
 ## Scripts
